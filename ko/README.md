@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="../README.md"><img src="../assets/lang-en.svg" alt="English" height="34"></a>
-  <img src="../assets/lang-ko-on.svg" alt="한국어 (이 문서)" height="34">
+  <a href="#하이쿠-연구소-템플릿"><img src="../assets/lang-ko-on.svg" alt="한국어 (이 문서)" height="34"></a>
 </p>
 
 <p align="center">

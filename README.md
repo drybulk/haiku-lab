@@ -1,7 +1,7 @@
 <p align="center"><img src="assets/banner.svg" alt="haiku lab. A small world, made by small models." width="100%"></p>
 
 <p align="center">
-  <img src="assets/lang-en-on.svg" alt="English (this page)" height="34">
+  <a href="#haiku-lab-template"><img src="assets/lang-en-on.svg" alt="English (this page)" height="34"></a>
   <a href="ko/README.md"><img src="assets/lang-ko.svg" alt="한국어" height="34"></a>
 </p>
 
