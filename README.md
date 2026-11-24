@@ -1,5 +1,7 @@
 <p align="center"><img src="assets/banner.svg" alt="haiku lab. A small world, made by small models." width="100%"></p>
 
+<p align="center"><b>한국어</b> · <a href="en/README.md">English</a></p>
+
 # 하이쿠 연구소 템플릿
 
 여러 AI 스레드가 스스로 질문을 고르고, 서로 묻고 반박하며, 사람이 지켜보지 않아도 쉬지 않고 연구하는 프로젝트("연구소")를 여는 데 쓰는 묶음입니다. 지침 한 편과 첫 메시지 한 편으로 이루어져 있고, 실제로 연 연구소들에서 생긴 고장을 하나씩 고치며 다듬어 왔습니다. 가장 작은 모델(Haiku)로 돌리는 것을 기준으로 썼습니다.
@@ -30,6 +32,7 @@ AI가 아래 "AI에게" 절을 따라 필요한 것을 묻고, 지침과 첫 메
 
 ### 1. 먼저 읽습니다
 - 이 `README.md` 전체, `instructions.md`, `first-message.md`, `downstream-variant.md`를 읽습니다. `CHANGELOG.md`는 사용자가 어떤 문장의 이유를 묻거나 문장을 고치려 할 때 읽습니다.
+- 사용자가 영어 판을 원하면 이 문서 대신 `en/README.md`를 읽고 그 절차를 따릅니다. 영어 판은 파일 구성이 다릅니다. 세부 규칙 파일(`lab-RULES.md`)이 따로 있고, 코디네이터가 연구자의 작업 언어, 사용자의 언어, 시간대도 묻습니다.
 - 주소만 받았고 파일을 읽을 수 없으면, 사용자에게 위의 네 파일을 붙여 달라고 합니다. 파일을 읽지 않은 채 지침을 지어내지 않습니다.
 
 ### 2. 무엇이 만들어지는지 짧게 설명합니다
@@ -170,7 +173,8 @@ AI가 아래 "AI에게" 절을 따라 필요한 것을 묻고, 지침과 첫 메
 | `instructions.md` | 프로젝트 설정의 지침 칸에 넣는 원문. 자리 표시를 채워서 씁니다 |
 | `first-message.md` | 프로젝트를 만든 뒤 코디네이터에게 보내는 첫 메시지. 자리 표시를 채워서 씁니다 |
 | `downstream-variant.md` | 큰 질문 하나를 노리는 프로젝트로 바꿔 쓰는 방법과, 분야를 고를 때 볼 것 |
-| `CHANGELOG.md` | 템플릿의 변경 기록 |
+| `en/` | 영어 판(`README.md`, `instructions.md`, `lab-RULES.md`, `first-message.md`, `downstream-variant.md`). 한국어 판의 번역이 아니며 구조가 다릅니다. 지침 칸이 16,000자까지만 받아서, 지침 칸에 넣는 글과 첫 메시지에 첨부하는 세부 규칙 파일로 나누었습니다 |
+| `CHANGELOG.md` | 템플릿의 변경 기록. 두 판의 변경을 한국어로 적습니다 |
 | `assets/banner.svg`, `assets/structure.svg` | 이 문서에 넣은 배너와 구조 그림. 글자는 Newsreader 글꼴(SIL Open Font License)의 윤곽선으로 그렸습니다 |
 
 ## 아직 시험 중이거나 정하지 않은 것 (2026-11-24)
