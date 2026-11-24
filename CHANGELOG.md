@@ -1,49 +1,33 @@
-# 변경 기록
+# Changelog
 
-공개판이 바뀔 때마다 무엇이 왜 바뀌었는지 적는다.
+What changed in the published template, and why. The Korean edition keeps a more detailed record in `ko/CHANGELOG.md`.
 
-## 2026-11-24 영어 판을 넣음
-- `en/`: 지침, 세부 규칙 파일, 첫 메시지, README, 바꿔 쓰는 방법의 영어 판을 넣었다. 한국어 판의 번역이 아니며 구조가 다르다. 프로젝트 설정의 지침 칸은 16,000자까지 받는데 같은 내용의 영어 글은 그보다 길다. 그래서 지침 칸에 넣는 글(`en/instructions.md`)과, 첫 메시지에 첨부하면 코디네이터가 연구소 저장소에 옮겨 두는 고정 규칙 파일(`en/lab-RULES.md`)로 나누었다. 멈춤이나 기록의 어긋남을 막는 규칙은 지침 칸에 남겼다.
-- 영어 판에서는 코디네이터가 출발할 분야와 함께 연구자의 작업 언어, 사용자의 언어, 시간대를 묻는다. 연구자의 기록은 작업 언어로, 사용자가 읽을 글은 사용자의 언어로 쓴다.
-- 영어 판으로 연구소 하나를 열어 몇 시간 돌려 보았다. 본 것과 아직 보지 못한 것은 `en/README.md`의 "Still on trial or undecided"에 적었다. 그 연구소는 분야를 지침에 적던 때의 판으로 열었으므로, 코디네이터가 분야를 묻는 부분은 영어 판에서도 아직 시험하지 않았다.
-- `README.md`: 맨 위에 두 판을 오가는 링크를 넣고, "AI에게" 1번과 "파일" 표에 영어 판을 적었다.
-- 변경 기록은 두 판을 함께 한국어로 적는다.
+## 2026-11-24 English becomes the front page
+- The English edition moved to the top of the repository and the Korean edition moved to `ko/`. Each README has buttons at the top that switch between the two.
+- The two editions are not translations of each other. The Instructions box of a project accepts at most 16,000 characters, and the same content is longer in English. So the English edition is split into the text for the box (`instructions.md`) and a fixed rules file (`lab-RULES.md`) that is attached to the first message and saved by the coordinator as `lab/RULES.md`. The rules that prevent stalls or corrupted records stay in the box.
+- In the English edition the coordinator also asks which language the researchers work in, which language threads use when they write to the user, and which time zone to use.
+- The English edition has been run in one lab for a few hours. What was seen and what has not been seen yet is in "Still on trial or undecided" in `README.md`.
+- This changelog starts here. Earlier entries below are summaries of the Korean record.
 
-## 2026-11-24 배너의 글씨를 가운데로 맞춤
-- `assets/banner.svg`: 글씨 "haiku lab"과 그 아래 문구가 그림의 가운데보다 오른쪽으로 44픽셀 치우쳐 있었다(왼쪽 여백 300, 오른쪽 여백 213). 글씨가 실제로 칠해지는 범위의 가운데를 그림의 가운데에 맞췄다(양쪽 여백 257). 그 밖의 모양은 바뀌지 않았다.
+## 2026-11-24 The coordinator asks for the field
+- Why: an AI that was given this repository and told only the name of a field invented a description of the field, five example questions, example branches, and two extra rules, and put them into the instructions. In labs whose instructions listed example questions, several researchers chose questions almost identical to the examples. And research that starts in one field can lead into another.
+- `first-message.md`: before opening any thread, the coordinator asks which field or topic the lab should start from, and writes the answer word for word on the first line of `lab/README.md`. It adds no description, examples, or rules.
+- `instructions.md`: the field is where the lab starts, not a boundary. The list of example fields was removed.
+- `README.md`: the AI that fills in the template does not ask for the field and does not put anything into the files that the user did not say.
+- Not yet run in a lab.
 
-## 2026-11-24 출발할 분야를 코디네이터가 묻게 함
-- 까닭 1: 이 저장소를 받은 AI에게 분야 하나만 말했더니, AI가 분야의 설명, 예시 질문 다섯 개, 충원할 때의 갈래 예시, 템플릿에 없는 규칙 두 줄을 스스로 지어서 지침에 넣었다. 무엇을 물을지는 연구자가 정하는 것이므로 이런 내용이 사용자의 말 없이 들어가면 안 된다.
-- 까닭 2: 예시 질문을 지침에 적어 둔 연구소에서는 연구자 여럿이 그 예시와 거의 같은 질문을 골랐다. 분야를 정하지 않은 연구소에서는 질문이 넓게 퍼지지 않고 수열과 정수론으로 모였다. 질문을 좁힌 것은 분야 이름보다 예시였다.
-- 까닭 3: 연구는 한 분야에서 시작해 다른 분야로 이어질 수 있다. 분야를 "이 안에서만 고른다"로 적으면 그런 연구를 접게 될 수 있다.
-- `first-message.md`: 코디네이터가 스레드를 열기 전에 연구소가 어느 분야나 주제에서 출발할지를 사용자에게 묻는다. 사용자가 "자유"라고 답하면 분야를 정하지 않는다. 답은 사용자가 쓴 말 그대로 `lab/README.md`의 첫 줄 "분야: …"에 적고, 코디네이터가 설명, 예시, 규칙을 덧붙이지 않는다. 연구자를 열 때도 분야를 설명하거나 질문을 제안하지 않는다.
-- `instructions.md` 1절: 분야는 연구소가 출발하는 곳이며 경계가 아니라고 적었다. 첫 질문은 그 분야에서 고르고, 연구가 다른 분야로 이어지면 따라가도 되며, 어떻게 이어졌는지 한 줄 적는다. "주제는 정해져 있지 않다" 줄에 있던 분야 목록(수학, 프로그래밍, …)을 뺐다.
-- `instructions.md` 7절: 충원 문장에 있던 분야 예시 목록을 뺐다.
-- `README.md`: "AI에게" 3번에서 분야를 묻는 줄을 빼고, 5번을 "분야는 파일에 넣지 않습니다"로 바꿨다. 8번에 "사용자가 말하지 않은 내용을 지어서 파일에 넣지 않는다, 템플릿에 없는 줄을 더하지 않는다"를 넣었다. 6번에 지침 칸이 16,000자까지 받는다는 것과 글자 수 확인을 넣었다. "프로젝트를 만드는 순서"에 6번(코디네이터의 질문에 답하기)을, "첫날 확인할 것"에 분야 줄 확인을 넣었다.
-- `downstream-variant.md`: "분야만 정하는 가벼운 변형"과 그 예시를 뺐다. 분야에 맞춘 규칙은 사용자가 직접 정한 경우에만 지침에 더한다.
-- 아직 시험하지 않았다: 이 방식으로 연 연구소가 없다. `README.md`의 "아직 시험 중이거나 정하지 않은 것"에 적었다.
+## 2026-11-24 Reasoning effort is a recommendation
+- `README.md`: a reasoning effort of xhigh is recommended for threads, and the template was tested at that level. It is not a requirement, because the right level may change with each model generation.
 
-## 2026-11-24 추론 강도는 권장 값으로 적음
-- `README.md`: "프로젝트를 만드는 순서" 3번에서 스레드의 추론 강도를 xhigh로 권장하고, 이 템플릿을 그 값으로 시험했다고 적었다. 반드시 그 값이어야 하는 것은 아니다. 모델 세대가 바뀌면 알맞은 추론 강도도 달라질 수 있기 때문이다.
+## 2026-11-24 Banner and structure figure
+- A banner and a figure of the thread structure were added. The lettering is drawn from outlines of open-licensed typefaces.
+- The README states that the template is published by an individual and is not made or endorsed by Anthropic.
 
-## 2026-11-24 배너와 구조 그림
-- `README.md`: 맨 위에 배너(`assets/banner.svg`)를 넣고, "구조" 절과 구조 그림(`assets/structure.svg`)을 새로 넣었다. 구조 그림은 사용자, 코디네이터, 연구소장, 안내 스레드, 연구자, 연구소 저장소가 어떻게 이어지는지를 보여 준다. 그림 속의 이름은 영어로 적었고, 그림 아래의 글이 각 이름을 설명한다.
-- `README.md`: 이 템플릿이 개인이 만들어 공개한 것이며 Anthropic이 만들거나 보증한 것이 아니라는 문장을 넣었다.
-- 그림의 글자는 Newsreader 글꼴(SIL Open Font License)의 윤곽선으로 그렸다.
-- `README.md`: 글 전체를 존댓말로 고쳤다. 내용은 바뀌지 않았다.
-- 지침과 첫 메시지는 바뀌지 않았다.
+## 2026-11-24 The guide thread, and threads that are not researchers
+- Why: after a few days, the notebooks, the board, and the daily digest were written in symbols and abbreviations that work among researchers, and a person could not follow the research. The researchers' way of writing was left alone, and a separate thread explains the lab in plain language when the user asks.
+- A thread that is not a researcher writes its own line in a section at the end of `lab/RESEARCHERS.md`, so that two threads do not hold the same job and finished threads get closed.
+- Researchers are not asked for deliverables such as papers or reports.
 
-## 2026-11-24 안내 스레드와 연구자가 아닌 스레드
-- 까닭: 연구소가 며칠 돌자, 연구자들의 노트와 게시판, 소장의 하루 요약이 연구자끼리 통하는 기호와 줄임말로 적혀 있어서 사람이 연구의 진행을 알기 어려웠다. 연구자의 소통과 기록 방식은 바꾸지 않기로 하고, 사람이 물을 때 쉬운 말로 설명하는 스레드를 따로 두었다.
-- `instructions.md`: 10절 "연구자가 아닌 스레드와 안내 스레드"를 새로 넣었다. 안내 스레드("안내: 연구소 브리핑")는 사람이 물을 때만 일하고, 기록을 읽어 그 분야를 모르는 사람이 알아들을 수 있게 설명하며, 같은 글을 `lab/BRIEFING/<날짜>.md`에 남긴다. 연구를 평가하거나 방향을 정해 주지 않는다. 기록만으로 설명하기 어려우면 연구자에게 설명 글을 부탁할 수 있고, 연구자는 자기 복제본에게 그 글을 맡기고 연구를 계속할 수 있다. 설명 글은 의무가 아니다.
-- `instructions.md`: 연구자가 아닌 스레드는 명부(`lab/RESEARCHERS.md`) 끝의 "연구자가 아닌 스레드" 절에 자기 줄(제목, 스레드 id, 맡은 일, 상태)을 적는다. 같은 일을 맡은 스레드가 둘이 되거나 끝난 스레드가 열린 채 남는 일이 있었기 때문이다. 어떤 역할을 두고 무엇이라 부를지는 연구소가 정한다. 7절의 "제목은 '운영: <맡은 일>'처럼 맡은 일로 시작한다"는 "맡은 일이 드러나게 붙인다"로 바꿨다.
-- `first-message.md`: `lab/` 구조에 `BRIEFING/`과 명부의 새 절을 더했고, 안내 스레드를 여는 4번을 넣었다(보고는 5번이 되었다).
-- `README.md`: "연구가 어떻게 되어 가는지 알고 싶을 때" 절, "첫날 확인할 것" 한 줄, "자주 생긴 문제와 대처" 세 줄(연구 내용을 알기 어렵다, 같은 일을 맡은 스레드가 둘이다, 스레드가 강제 푸시를 잘못 보고한다), 설계 원칙 "사람이 읽을 글은 연구자가 아닌 스레드가 쓴다"를 더했다.
-- 연구자에게 논문이나 보고서 같은 성과물을 요구하지 않는다. 성과물이 연구의 목표가 되지 않게 하려는 것이다.
-- 아직 보지 못한 것: 브리핑이 여러 번 쌓여도 길이와 정확도가 유지되는지, 설명 글을 복제본에게 맡기는 방식이 실제로 쓰이는지.
-
-## 2026-11-23 첫 공개판
-- 들어 있는 것: 사용법과 AI가 따를 절차를 적은 `README.md`, 프로젝트 지침 원문 `instructions.md`, 코디네이터에게 보내는 첫 메시지 `first-message.md`, 분야를 정하거나 큰 질문 하나를 노리도록 바꿔 쓰는 방법 `downstream-variant.md`.
-- 이 판의 지침은 2026-11-20부터 실제로 돌린 연구소들에서 생긴 고장을 고치며 다듬은 것이고, 아직 시험 적용 중이다. 시험 중인 항목은 `README.md`의 "아직 시험 중이거나 정하지 않은 것"에 있다.
-- 이 판에서 지침에 들어가 있는 주요 장치: 연구자의 끝없는 자기 깨우기와 소장의 60분 순회, 연구자끼리의 직접 메시지와 글마다 파일 하나인 게시판, 쓴 사람과 짝 검토자가 나눠 하는 선행 결과 확인, main에 직접 올리는 허락과 올리는 순서, 연구소 저장소의 이름과 "저장소 추가를 요청하지 않는다"는 줄, 스레드 제목 규칙, 사용자의 승인이 필요한 일의 목록.
-- 라이선스는 MIT이다.
+## 2026-11-23 First public version
+- The instructions, the first message, and the README with the procedure for an AI to follow. The instructions were refined by fixing failures in labs run since 2026-11-20: the self-wake that never ends and the director's hourly sweep, direct messages and a board with one file per post, prior-work checks shared by the author and the pair reviewer, permission to push directly to main, and the list of things that need the user's approval.
+- The license is MIT.

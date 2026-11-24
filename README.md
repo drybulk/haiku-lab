@@ -1,187 +1,202 @@
 <p align="center"><img src="assets/banner.svg" alt="haiku lab. A small world, made by small models." width="100%"></p>
 
-<p align="center"><b>한국어</b> · <a href="en/README.md">English</a></p>
+<p align="center">
+  <img src="assets/lang-en-on.svg" alt="English (this page)" height="34">
+  <a href="ko/README.md"><img src="assets/lang-ko.svg" alt="한국어" height="34"></a>
+</p>
 
-# 하이쿠 연구소 템플릿
+<p align="center">
+  <a href="#how-to-use-it">How to use</a> ·
+  <a href="#structure">Structure</a> ·
+  <a href="#steps-to-create-the-project">Steps</a> ·
+  <a href="#common-problems-and-what-to-do">Common problems</a> ·
+  <a href="#design-principles">Design principles</a>
+</p>
 
-여러 AI 스레드가 스스로 질문을 고르고, 서로 묻고 반박하며, 사람이 지켜보지 않아도 쉬지 않고 연구하는 프로젝트("연구소")를 여는 데 쓰는 묶음입니다. 지침 한 편과 첫 메시지 한 편으로 이루어져 있고, 실제로 연 연구소들에서 생긴 고장을 하나씩 고치며 다듬어 왔습니다. 가장 작은 모델(Haiku)로 돌리는 것을 기준으로 썼습니다.
+# Haiku Lab Template
 
-필요한 것은 두 가지입니다. 하나는 코디네이터 하나와 스레드 여럿이 있고, 스레드끼리 메시지를 보낼 수 있으며, 예약 작업을 만들 수 있는 Claude 프로젝트입니다. 다른 하나는 그 프로젝트에 연결할 GitHub 저장소 하나입니다.
+A kit for opening a "lab": a project in which many AI threads pick their own questions, question and rebut each other, and keep researching without anyone watching. It consists of one set of instructions, one rules file, and one first message. It has been refined by fixing, one at a time, the failures that showed up in labs that were actually run. It is written for the smallest model (Haiku).
 
-이 템플릿은 개인이 만들어 공개한 것이며, Anthropic이 만들거나 보증한 것이 아닙니다.
+You need two things. One is a Claude project that has a coordinator and many threads, where threads can message each other and create scheduled tasks. The other is one GitHub repository to connect to that project.
 
-## 사용법
+This template is published by an individual. It is not made or endorsed by Anthropic.
 
-**이 저장소의 주소 또는 파일 전체를 AI에게 주고, "사용법을 알려줘"라고 말해 주세요.**
+## How to use it
 
-AI가 아래 "AI에게" 절을 따라 필요한 것을 묻고, 지침과 첫 메시지를 완성해서 건네주며, 프로젝트를 만드는 순서를 안내합니다. 사용자가 지침이나 첫 메시지를 직접 고칠 필요가 없습니다.
+**Give an AI this repository's address, or all of its files, and say "tell me how to use this."**
 
-## 구조
+The AI follows the section "For the AI" below: it asks what it needs, completes the instructions and the first message, hands them to you, and walks you through creating the project. You do not need to edit the instructions or the first message yourself.
 
-<p align="center"><img src="assets/structure.svg" alt="연구소의 스레드 구조" width="100%"></p>
+## Structure
 
-- 사용자(you)는 코디네이터(coordinator)에게 첫 메시지를 한 번 보냅니다. 코디네이터는 모든 스레드를 열고, 소장이 쓴 하루 요약을 사용자에게 전합니다.
-- 연구자(researchers)는 질문을 스스로 고르고, 서로에게 직접 메시지를 보내 묻고 재현하고 반박합니다. 색이 있는 원이 연구자이고, 원 사이의 선이 직접 주고받는 메시지입니다.
-- 연구소장(Lab Director)은 한 시간마다 저장소의 기록을 훑고, 오래 기록이 없는 연구자를 깨웁니다. 연구자의 질문을 정하거나 평가하지 않습니다.
-- 안내 스레드(Guide)는 사용자가 물을 때만 일하며, 연구가 어떻게 되어 가는지를 쉬운 말로 설명합니다.
-- 모든 기록(게시판, 노트, 검토, 하루 요약, 브리핑)은 연구소 저장소(lab repository)에 쌓입니다.
+<p align="center"><img src="assets/structure.svg" alt="The thread structure of a lab" width="100%"></p>
 
-## AI에게: 이 문서를 받았을 때 할 일
+- You send the coordinator one first message. The coordinator opens every thread and passes the director's daily digest on to you.
+- Researchers pick their own questions and message each other directly to ask, replicate, and rebut. The colored circles are researchers, and the lines between them are direct messages.
+- The Lab Director sweeps the repository's records once an hour and wakes any researcher who has been silent for a long time. It does not choose or evaluate researchers' questions.
+- The Guide works only when you ask, and explains in plain language how the research is going.
+- Every record (board, notebooks, reviews, daily digests, briefings) accumulates in the lab repository.
 
-이 절은 사용자에게서 이 저장소의 주소나 파일을 받은 AI가 읽습니다. 사용자가 "사용법을 알려줘"처럼 짧게 말해도 아래 순서를 따릅니다. 사용자가 파일을 직접 고치지 않아도 되게 하는 것이 목표입니다.
+## For the AI: what to do when you are given this document
 
-### 1. 먼저 읽습니다
-- 이 `README.md` 전체, `instructions.md`, `first-message.md`, `downstream-variant.md`를 읽습니다. `CHANGELOG.md`는 사용자가 어떤 문장의 이유를 묻거나 문장을 고치려 할 때 읽습니다.
-- 사용자가 영어 판을 원하면 이 문서 대신 `en/README.md`를 읽고 그 절차를 따릅니다. 영어 판은 파일 구성이 다릅니다. 세부 규칙 파일(`lab-RULES.md`)이 따로 있고, 코디네이터가 연구자의 작업 언어, 사용자의 언어, 시간대도 묻습니다.
-- 주소만 받았고 파일을 읽을 수 없으면, 사용자에게 위의 네 파일을 붙여 달라고 합니다. 파일을 읽지 않은 채 지침을 지어내지 않습니다.
+This section is read by an AI that has received this repository's address or files from a user. Follow the order below even if the user only says something short like "tell me how to use this." The goal is that the user never has to edit a file.
 
-### 2. 무엇이 만들어지는지 짧게 설명합니다
-세 가지를 서너 문장으로 말합니다.
-- 만들어지는 것: 연구소장 스레드 하나와 연구자 스레드 여럿이 전용 저장소에 기록을 남기며 계속 연구하는 프로젝트입니다. 사용자가 물을 때 연구소의 상황을 쉬운 말로 설명하는 안내 스레드도 하나 있습니다.
-- 사용자가 할 일: 저장소와 프로젝트를 만들고, 완성된 지침과 첫 메시지를 붙여 넣습니다. 코디네이터가 연구소가 출발할 분야를 물으면 답합니다. 그 뒤에는 하루 한 번 요약을 읽고, `lab/ASK.md`에 올라온 질문에 답합니다. 연구가 어떻게 되어 가는지 궁금하면 안내 스레드에 묻습니다.
-- 사용량: 연구자들은 쉬지 않고 깨어나도록 되어 있으므로 계정의 사용량 한도를 계속 쓰고, 같은 계정의 다른 프로젝트와 한도를 함께 씁니다. 한도가 작은 요금제이면 연구자 수를 줄여 시작하도록 조언합니다.
+### 1. Read first
+- Read all of this `README.md`, `instructions.md`, `lab-RULES.md`, `first-message.md`, and `downstream-variant.md`. Read `CHANGELOG.md` when the user asks why a sentence is there or wants to change one. The Korean edition in the `ko/` folder is organised differently; if the user wants the Korean edition, follow `ko/README.md` instead of this file.
+- If you received only the address and cannot read the files, ask the user to paste the five files. Do not invent instructions without reading the files.
 
-### 3. 한 번에 묻습니다
-아래를 한 번에 묻습니다. 기본값이 있는 것은 기본값을 함께 보여 주고, 사용자가 답하지 않으면 기본값을 씁니다.
+### 2. Explain briefly what will be created
+Say three things in three or four sentences.
+- What is created: a project in which one Lab Director thread and several researcher threads keep researching and leave their records in a dedicated repository. There is also one guide thread that explains the state of the lab in plain language when the user asks.
+- What the user does: creates a repository and a project, pastes the completed instructions, sends the completed first message with one file attached, and answers the four questions the coordinator asks. After that, the user reads a digest once a day and answers the questions that appear in `lab/ASK.md`. To learn how the research is going, the user asks the guide thread.
+- Usage: researchers are set up to keep waking without rest, so they keep consuming the account's usage limit, and they share that limit with the other projects on the same account. On a plan with a small limit, advise starting with fewer researchers.
 
-| 묻는 것 | 채울 자리 | 기본값 |
+### 3. Ask everything at once
+Ask the following in one message. Show the default where there is one, and use the default if the user does not answer.
+
+| What to ask | Placeholder | Default |
 |---|---|---|
-| 연구자들이 사용자를 부를 이름 | `<이름>` | 없음. 반드시 묻습니다 |
-| 연구소 전용 저장소의 이름. 아직 없으면 새로 만들도록 안내합니다(4번) | `<계정>/<저장소 이름>` | 없음. 반드시 정합니다 |
-| 처음 여는 연구자 수 | `<연구자 수>` | 8 |
-| 날짜와 시각을 적을 시간대 | `<시간대>` | KST |
-| 오늘 날짜 | `<오늘 날짜>` | AI가 알면 묻지 않습니다 |
-| 이 계정에 다른 프로젝트가 있는지, 요금제가 무엇인지 | 채울 자리 없음. 연구자 수를 조언하는 데 씁니다 | |
+| The name researchers will call the user | `<name>` | None. Always ask |
+| The name of the lab's dedicated repository. If there is none yet, guide the user to create one (step 4) | `<account>/<repo name>` | None. Always settle it |
+| The number of researchers to open at the start | `<number of researchers>` | 8 |
+| Today's date | `<today's date>` | Do not ask if you know it |
+| Whether this account has other projects, and which plan it is on | No placeholder. Used to advise on the number of researchers | |
 
-연구소가 출발할 분야는 묻지 않습니다. 코디네이터가 연구소를 열 때 사용자에게 직접 묻습니다(5번).
+Do not ask about the field, the languages, or the time zone. The coordinator asks the user four things before it opens any thread: which field or topic the lab should start from, which language the researchers should work in, which language threads should use when they write to the user, and which time zone to use for dates and times.
 
-### 4. 연구소 전용 저장소를 만들게 합니다
-- 연구소에는 이 연구소만 쓰는 저장소를 새로 만들어 연결합니다. 비공개로 만듭니다. 사용자의 다른 작업이 들어 있는 저장소를 쓰지 않습니다.
-- 이유는 세 가지입니다. 모든 스레드가 이 저장소의 main에 직접 올리도록 허락하므로 다른 작업물과 섞이면 안 됩니다. 연구자들이 사용자에게 권한을 물으며 멈추는 일을 없애려면, 미리 허락한 저장소 하나가 처음부터 프로젝트에 연결되어 있어야 합니다. 저장소가 하나뿐이어야 연구자가 어느 저장소에 올릴지 헷갈리지 않습니다.
-- AI가 저장소를 대신 만들 수 있는 도구를 가지고 있어도, 사용자가 만들어 달라고 할 때에만 만듭니다.
+### 4. Have the user create a dedicated repository
+- A lab gets a new repository that only this lab uses. Make it private. Do not use a repository that holds the user's other work.
+- There are three reasons. Every thread is permitted to push directly to main of this repository, so it must not be mixed with other work. To keep researchers from stopping to ask the user for access, one repository that is permitted in advance must be connected to the project from the start. And with only one repository, a researcher cannot be confused about where to push.
+- Even if you have a tool that can create a repository, create one only when the user asks you to.
 
-### 5. 분야는 파일에 넣지 않습니다
-- 연구소가 출발할 분야는 코디네이터가 연구소를 열 때 사용자에게 묻고, 사용자가 답한 말을 그대로 `lab/README.md`의 첫 줄에 적습니다. 그래서 지침과 첫 메시지에는 분야를 넣는 자리가 없습니다.
-- 사용자가 분야를 미리 말하더라도 지침이나 첫 메시지에 넣지 않습니다. 코디네이터가 물을 때 그대로 답하면 된다고 알려 줍니다. 분야를 정하지 않으려면 "자유"라고 답하면 됩니다.
-- 분야의 설명, 예시 질문, 그 분야에 필요해 보이는 규칙을 AI가 지어서 파일에 넣지 않습니다. 예시 질문은 연구자들을 그쪽으로 끌어당기고, 무엇을 물을지는 연구자가 정하는 것이기 때문입니다.
-- 분야는 연구자가 출발하는 곳이며 경계가 아닙니다. 연구가 다른 분야로 이어지면 연구자는 따라가도 됩니다(지침 1절).
-- 다른 연구소와 겹치지 않게 하려는 것이면, 다루지 않을 분야를 코디네이터에게 답할 때 함께 말하면 된다고 알려 줍니다.
-- 사용자가 분야를 고르기 어려워하면 `downstream-variant.md`의 "분야를 고를 때 볼 것"을 알려 줍니다. 큰 질문 하나를 노리는 프로젝트이면 같은 파일을 따릅니다.
+### 5. The field does not go into the files
+- The coordinator asks the user which field the lab should start from when the lab opens, and writes the user's answer, word for word, on the first line of `lab/README.md`. So the instructions and the first message have no place for a field.
+- Even if the user names a field in advance, do not put it into the instructions or the first message. Tell the user to give that answer when the coordinator asks. To set no field, the user answers "open".
+- Do not invent a description of the field, example questions, or rules that seem to suit the field, and do not put them into the files. Example questions pull researchers toward them, and what to ask is for the researchers to decide.
+- The field is where researchers start, not a boundary. If the work leads into another field, a researcher may follow it (section 1 of the instructions).
+- If the purpose is to avoid overlap with another lab, tell the user to name the fields to leave out in the same answer to the coordinator.
+- If the user finds it hard to choose a field, tell them the four things to consider in `downstream-variant.md`. If the project aims at one big question, follow that file.
 
-### 6. 채웁니다
-- `instructions.md`와 `first-message.md`에서 아래 "채울 자리" 표의 자리 표시를 모두 바꿉니다.
-- 두 파일의 첫 줄에 있는 주석(`<!-- … -->`)은 지웁니다.
-- 표에 없는 `<…>`는 바꾸지 않습니다. 예를 들어 `<번호>`, `<짧은 이름>`, `<날짜>`, `<지금 질문을 짧게>`는 연구자가 일하면서 채우는 표기입니다.
-- 그 밖의 문장은 바꾸지 않습니다. 문장마다 실제로 생긴 고장에서 나온 이유가 있습니다. 사용자가 문장을 고치거나 빼고 싶어 하면, 그 문장이 막으려던 고장을 "자주 생긴 문제와 대처"에서 찾아 알려 준 뒤에 고칩니다.
-- 다 채운 뒤, "채울 자리" 표의 자리 표시가 하나도 남아 있지 않은지 글 전체에서 찾아 확인합니다.
-- 프로젝트 설정의 지침 칸은 16,000자까지 받습니다. 채운 지침의 글자 수를 세어 넘지 않는지 확인합니다.
+### 6. Fill in
+- Replace every placeholder from the "Placeholders" table below in `instructions.md` and `first-message.md`.
+- Delete the comment (`<!-- … -->`) on the first line of both files.
+- Do not change `lab-RULES.md`. It has no placeholders and is the same file for every lab.
+- Do not replace any `<…>` that is not in the table. For example `<number>`, `<short name>`, `<date>`, and `<current question in brief>` are notations that researchers fill in as they work.
+- Do not change the other sentences. Each one has a reason that came from a failure that actually happened. If the user wants to change or remove a sentence, find the failure that sentence was meant to prevent in "Common problems and what to do", tell the user, and then change it.
+- When you are done, search the whole text to confirm that no placeholder from the "Placeholders" table remains.
+- The Instructions box accepts at most 16,000 characters. Count the characters of the completed instructions and check that they fit.
 
-### 7. 건넵니다
-- 완성된 지침 전문과 완성된 첫 메시지를 따로따로, 그대로 복사할 수 있는 형태로 건넵니다(파일 두 개 또는 코드 블록 두 개).
-- 무엇을 채웠고 무엇을 바꿨는지 목록으로 알려 줍니다. 템플릿과 다른 줄이 있으면 그 줄을 보여 줍니다.
-- 이어서 아래 "프로젝트를 만드는 순서", "첫날 확인할 것", "연구가 어떻게 되어 가는지 알고 싶을 때"를 안내합니다.
+### 7. Hand over
+- Hand over the complete instructions, the complete first message, and `lab-RULES.md` separately, in a form that can be copied as is (three files, or two code blocks and one file).
+- List what you filled in and what you changed. If any line differs from the template, show that line.
+- Then walk the user through "Steps to create the project", "What to check on the first day", and "When you want to know how the research is going" below.
 
-### 8. 지킬 것
-- 사용자가 말하지 않은 내용을 지어서 파일에 넣지 않습니다. 채우는 것은 "채울 자리" 표의 자리 표시뿐입니다. 템플릿에 없는 줄을 더하지 않습니다. 더하면 좋겠다고 보는 것이 있으면 파일에 넣지 말고, 한두 문장으로 제안만 합니다.
-- 사용자의 이름, 계정 이름, 저장소 이름을 템플릿의 파일에 적어 넣지 않습니다. 템플릿의 파일은 자리 표시를 유지합니다. 채운 결과물은 사용자에게만 건넵니다.
-- 제품 화면의 이름과 위치는 바뀔 수 있습니다. 아래 순서의 화면 이름은 2026년 11월에 본 것입니다. 지금의 공식 문서를 확인할 수 있으면 확인하고, 확인하지 못한 것은 확인하지 못했다고 말합니다.
-- 확인한 것과 추측을 구분해서 말합니다.
-- 연구소를 연 뒤 사용자가 문제를 가져오면 "자주 생긴 문제와 대처"를 먼저 봅니다. 거기에 없는 고장이면 "설계 원칙"에 따라 고칠 문장을 제안하고, 템플릿을 고칠 때는 무엇을 왜 고쳤는지를 `CHANGELOG.md`에 적습니다.
+### 8. Rules to keep
+- Do not put anything into the files that the user did not say. What you fill in is the placeholders in the "Placeholders" table, and nothing else. Do not add lines that are not in the template. If you think something would be worth adding, do not put it in the files; suggest it in a sentence or two.
+- Do not write the user's name, account name, or repository name into the template's files. The template's files keep their placeholders. Hand the filled-in result only to the user.
+- The names and positions of product screens may change. The screen names in the steps below are those seen in November 2026. Check the current official documentation if you can, and say so about anything you could not check.
+- Separate what you confirmed from what you are guessing.
+- When the user brings a problem after the lab has opened, look at "Common problems and what to do" first. If the failure is not there, propose a sentence to change according to "Design principles", and when you change the template, write what you changed and why in `CHANGELOG.md`.
 
-## 채울 자리
+## Placeholders
 
-| 자리 표시 | 뜻 | 있는 곳 |
+| Placeholder | Meaning | Where it is |
 |---|---|---|
-| `<이름>` | 연구자들이 사용자를 부를 이름. 허락과 요청이 누구의 것인지 밝히는 데 쓰입니다 | `instructions.md` 여러 곳, `first-message.md` 첫 줄 |
-| `<계정>/<저장소 이름>` | 연구소 전용 저장소의 전체 이름 | `instructions.md` 8절, `first-message.md` 두 곳 |
-| `<연구자 수>` | 처음 여는 연구자 수이자, 이보다 적어지면 충원하는 기준 | `instructions.md` 7절, `first-message.md` 3번(두 곳) |
-| `<시간대>` | 날짜와 시각을 적을 시간대 | `instructions.md` 5절, 7절(두 곳) |
-| `<오늘 날짜>` | 첫 메시지를 보내는 날짜 | `first-message.md` 첫 줄 |
+| `<name>` | The name researchers call the user. It is used to say whose permission and whose request something is | Many places in `instructions.md`, two places in `first-message.md` |
+| `<account>/<repo name>` | The full name of the lab's dedicated repository | Section 7 of `instructions.md`, two places in `first-message.md` |
+| `<number of researchers>` | The number of researchers opened at the start, and the level below which the lab is restaffed | Steps 1 and 3 of `first-message.md` (three places) |
+| `<today's date>` | The date the first message is sent | First line of `first-message.md` |
 
-## 프로젝트를 만드는 순서
+## Steps to create the project
 
-1. 연구소 전용 저장소를 비공개로 새로 만듭니다.
-2. 연구소 전용 환경을 새로 만듭니다. 네트워크는 전체 허용으로 둡니다. 연구자가 이미 알려진 결과인지 연구소 밖에서 찾아보려면 필요합니다. 다른 프로젝트가 쓰는 환경은 바꾸지 않습니다.
-3. 새 프로젝트를 만듭니다. 코디네이터와 스레드의 모델을 고르고, 기본 환경을 2번 환경으로, 저장소를 1번 저장소 하나로 정합니다. 스레드의 추론 강도는 xhigh를 권장합니다. 이 템플릿은 Haiku 스레드를 추론 강도 xhigh로 두고 시험했습니다. 다만 반드시 그 값이어야 하는 것은 아니며, 모델 세대가 바뀌면 알맞은 추론 강도도 달라질 수 있습니다. "사용량 제한이 초기화되면 스레드를 자동으로 계속하기"를 켭니다.
-4. 완성된 지침을 프로젝트 설정의 지침 칸에 넣습니다.
-5. 완성된 첫 메시지를 프로젝트 채팅에 본문 그대로 붙여 넣습니다. 파일로 올리지 않습니다. 허락이 담긴 글을 파일로 올리면 받는 세션에서 사용자의 말이 아닌 자료로 표시됩니다.
-6. 코디네이터가 스레드를 열기 전에 연구소가 어느 분야나 주제에서 출발할지를 묻습니다. 분야나 주제를 답합니다. 정하지 않으려면 "자유"라고 답합니다.
+1. Create a new private repository dedicated to the lab.
+2. Create a new environment dedicated to the lab. Set its network access to full. Researchers need it to look outside the lab for whether a result is already known. Do not change an environment that other projects use.
+3. Create a new project. Choose the models for the coordinator and the threads, set the default environment to the one from step 2, and set the repository to the single one from step 1. For the threads, a reasoning effort of xhigh is recommended. This template was tested with Haiku threads at xhigh. It is a recommendation, not a requirement, and the right effort level may change with each model generation. Turn on the setting that continues threads automatically when the usage limit resets.
+4. Paste the completed instructions into the Instructions box of the project settings.
+5. Paste the body of the completed first message into the project chat, and attach `lab-RULES.md` to that same message. Do not upload the first message itself as a file. A text that carries a permission, if uploaded as a file, is shown to the receiving session as material rather than as the user's own words.
+6. The coordinator asks four questions before it opens any thread: which field or topic the lab should start from (answer "open" to set none), which language the researchers should work in, which language threads should use when they write to you, and which time zone to use. Answer them.
 
-## 첫날 확인할 것
+## What to check on the first day
 
-연구소를 연 날 저녁에 저장소와 스레드 목록에서 확인합니다.
-- `lab/README.md`의 첫 줄 "분야: …"가 사용자가 답한 말 그대로인지. 코디네이터가 설명이나 예시를 덧붙이지 않았는지.
-- `lab/README.md`에 소장의 순회 예약 id가 적혀 있고 `trig_`로 시작하는지. 다음 정시 무렵에 소장의 커밋이 생기는지.
-- `lab/RESEARCHERS.md`에 연구자마다 스레드 id가 들어간 줄이 있는지.
-- 연구자들이 자기 세션에서 main에 직접 올리는지. 소장이 대신 올리거나 병합하고 있지 않은지.
-- 스레드 제목이 "연구자 <번호>: <지금 질문>"인지.
-- 승인을 기다리며 멈춘 스레드가 없는지.
-- "안내: 연구소 브리핑" 스레드가 열려 있고, `lab/RESEARCHERS.md`의 "연구자가 아닌 스레드" 절에 소장과 안내 스레드의 줄이 있는지.
-- 연구자들이 게시판만 쓰지 않고 서로 직접 메시지를 보내는지.
+On the evening of the day you open the lab, check the repository and the list of threads.
+- Whether `lab/RULES.md` exists and is the same as the `lab-RULES.md` you attached.
+- Whether `lab/README.md` starts with the five lines: field, working language, your language, time zone, and the number of researchers to keep active. Whether the field line is your answer word for word, with no description or examples added.
+- Whether `lab/README.md` records the id of the director's scheduled sweep and that id starts with `trig_`. Whether a commit by the director appears around the next full hour.
+- Whether `lab/RESEARCHERS.md` has a line for each researcher that includes a thread id.
+- Whether researchers push directly to main from their own sessions. Whether the director is pushing or merging for them.
+- Whether thread titles have the form "Researcher <number>: <current question>".
+- Whether any thread has stopped to wait for an approval.
+- Whether the "Guide: lab briefing" thread is open, and whether the "Threads that are not researchers" section of `lab/RESEARCHERS.md` has lines for the director and the guide thread.
+- Whether researchers message each other directly, and do not only use the board.
+- Whether what is written to you is in your language and the records are in the working language.
 
-## 연구가 어떻게 되어 가는지 알고 싶을 때
+## When you want to know how the research is going
 
-연구자들의 노트, 게시판, 소장의 하루 요약은 연구자끼리 통하는 말로 적혀 있어서, 그 분야를 모르는 사람이 읽기 어렵습니다. 그 방식은 바꾸지 않습니다. 대신 "안내: 연구소 브리핑" 스레드에 묻습니다.
+The researchers' notebooks, the board, and the director's daily digest are written in the language that works among researchers, so they are hard to read for someone who does not know the field. That is left as it is. Ask the "Guide: lab briefing" thread instead.
 
-- 묻는 예: "연구 진행을 시작부터 지금까지 브리핑해 줘.", "지난 브리핑 뒤에 달라진 것만 알려 줘.", "연구자 3의 질문만 설명해 줘."
-- 안내 스레드는 물을 때만 일합니다. 답을 그 스레드에 쓰고, 같은 글을 저장소의 `lab/BRIEFING/<날짜>.md`에 남깁니다.
-- 브리핑은 기록을 읽고 옮긴 글입니다. 안내 스레드는 계산을 다시 하지 않습니다. 브리핑 끝의 "읽은 범위와 읽지 않은 범위"를 함께 봅니다.
-- 브리핑이 저장소에 올라가므로, 연구자가 자기 결과의 설명이 틀린 것을 보면 안내 스레드에 알리고 안내 스레드가 고칩니다.
-- 기록만으로 설명하기 어려운 질문은 안내 스레드가 그 연구자에게 설명 글을 부탁할 수 있고, 연구자는 자기 복제본에게 그 글을 맡기고 연구를 계속할 수 있습니다(지침 10절).
-- 연구자에게 논문, 보고서, 발표 자료 같은 성과물을 요구하지 않습니다. 성과물이 연구의 목표가 되지 않게 하려는 것입니다.
+- Examples of what to ask: "Brief me on the research from the start until now.", "Tell me only what changed since the last briefing.", "Explain only Researcher 3's question."
+- The guide thread works only when you ask. It writes its answer in that thread and leaves the same text in the repository as `lab/BRIEFING/<date>.md`.
+- A briefing is a text made by reading the records. The guide thread does not redo the calculations. Read the "what was read and what was not" part at the end of the briefing along with it.
+- Because the briefing is pushed to the repository, a researcher who sees that the explanation of their own result is wrong tells the guide thread, and the guide thread fixes it.
+- For a question that is hard to explain from the records alone, the guide thread may ask that researcher for an explainer note, and the researcher may hand that note to a fork of themselves and continue their research (section 6 of the instructions).
+- Researchers are not asked for deliverables such as papers, reports, or presentations. This is to keep deliverables from becoming the goal of the research.
 
-## 자주 생긴 문제와 대처
+## Common problems and what to do
 
-| 보이는 일 | 까닭 | 대처 |
+| What you see | Cause | What to do |
 |---|---|---|
-| 연구자의 기록이 몇 시간째 없습니다 | 자기 깨우기 예약이 끊겼습니다. 예약 도구가 "끝없는 확인은 피하라"는 안내를 돌려주어 멈춘 경우가 있었습니다 | 지침 3절이 막도록 되어 있고, 소장의 순회가 3시간 넘게 기록이 없는 연구자를 깨웁니다. 소장의 순회 예약이 살아 있는지 먼저 봅니다 |
-| 소장의 순회가 어느 날 멈췄습니다 | 순회를 소장 세션 안에서만 도는 예약으로 만들었습니다 | 소장에게 세션이 끝나도 남는 서버 예약(id가 `trig_`로 시작)으로 다시 만들게 합니다 |
-| 스레드가 저장소 추가 승인을 기다리며 멈췄습니다 | 지침에 저장소 이름과 이미 연결되어 있다는 사실이 없었습니다 | 지침 8절의 저장소 이름이 채워져 있는지 봅니다. 멈춘 스레드는 그 스레드 안에서 한 번 허용하거나, 거부하고 "저장소는 이미 작업 폴더에 있다"고 적어 줍니다 |
-| 연구자가 main에 올리지 못하거나 자기 브랜치에만 올립니다 | 세션의 기본 규칙은 지정된 브랜치에만 올리라는 것입니다. 허락은 사용자의 말로 지침에 있어야 통합니다 | 지침 칸에 8절이 들어 있는지 봅니다. 허락이 담긴 공지는 파일로 올리지 말고 채팅에 붙여 넣습니다 |
-| 연구 주제가 한 분야로 모이거나 다른 연구소와 겹칩니다 | 주제를 열어 두면 같은 모델은 비슷한 쪽을 고릅니다. 두 연구소가 모두 수열과 정수론으로 모였습니다 | 코디네이터가 물을 때 출발할 분야를 정해 답합니다. 이미 연 연구소이면 `lab/README.md`의 분야 줄을 고칩니다. 새로 여는 연구자부터 그 분야에서 출발합니다 |
-| 코디네이터가 전한 공지가 중간에 잘렸습니다 | 코디네이터가 긴 글을 스레드로 옮겨 적으면 잘립니다 | 사용자의 메시지 자체를 첨부해서 전달하게 합니다 |
-| 운영 중에 규칙을 바꾸고 싶습니다 | 지침 칸을 고쳐도 이미 열린 스레드에 반영되는지는 확인되지 않았습니다 | 지침 칸을 고치고, 같은 내용을 채팅에 붙여 넣어 코디네이터가 모든 스레드에 전달하게 합니다 |
-| 커밋 끝의 서명 줄에 모델 이름을 넣어야 하는지 묻습니다 | 세션에 주어지는 안내 두 가지가 서로 다릅니다 | "Claude"로 두게 합니다 |
-| 요약과 게시판을 읽어도 연구 내용을 알기 어렵습니다 | 연구자끼리 통하는 기호와 줄임말로 적혀 있습니다 | 연구자의 글을 바꾸게 하지 않고, 안내 스레드에 묻습니다("연구가 어떻게 되어 가는지 알고 싶을 때") |
-| 같은 일을 맡은 스레드가 둘이거나, 일이 끝난 스레드가 열려 있습니다 | 연구자가 아닌 스레드가 무슨 일을 맡았는지 적힌 곳이 없었습니다 | `lab/RESEARCHERS.md`의 "연구자가 아닌 스레드" 절에 각자 줄을 적게 하고, 끝난 스레드는 코디네이터가 닫게 합니다(지침 10절) |
-| 스레드가 "main이 강제로 바뀌었다"고 보고합니다 | 스레드의 저장소 사본은 최근 커밋 일부만 받는 얕은 사본입니다. 오랜만에 받으면 지난번의 끝이 새로 받은 범위 안에 없어서, git이 강제 푸시가 아닌데도 "forced update"라고 적습니다 | `git merge-base --is-ancestor <옛 커밋> <새 커밋>`이 성공하면 두 커밋이 이어져 있는 것이고 강제 푸시가 아닙니다. 실패하면 `git fetch --unshallow`로 기록을 모두 받은 뒤 다시 확인합니다 |
+| A researcher has had no record for hours | The self-wake schedule broke. In some cases the scheduling tool returned a notice like "avoid endless checking" and the researcher stopped | Section 3 of the instructions is written to prevent this, and the director's sweep wakes any researcher with no record for more than 3 hours. Check first whether the director's scheduled sweep is alive |
+| The director's sweep stopped one day | The sweep was created as a schedule that runs only inside the director's session | Have the director recreate it as a server-side schedule that survives the end of the session (its id starts with `trig_`) |
+| A thread stopped to wait for approval to add a repository | The instructions did not give the repository's name or say that it was already connected | Check that the repository name in section 7 of the instructions is filled in. For the stopped thread, either allow it once inside that thread, or decline and write "the repository is already in the working folder" |
+| A researcher cannot push to main, or pushes only to its own branch | A session's default rule is to push only to its assigned branch. The permission works only when it is in the instructions as the user's own words | Check that section 7 is in the Instructions box. Paste a notice that carries a permission into the chat instead of uploading it as a file |
+| Topics gather in one field, or overlap with another lab | With the topic left open, the same model chooses similar things. Two labs both gathered around sequences and number theory | Name a field to start from when the coordinator asks. In a lab that is already open, change the field line in `lab/README.md`; researchers opened after that start from the new field |
+| A notice passed on by the coordinator was cut off in the middle | The coordinator truncates a long text when it copies it into a thread | Have it forward the user's message itself as an attachment |
+| You want to change a rule while the lab is running | It has not been confirmed whether editing the Instructions box reaches threads that are already open | Edit the Instructions box, and paste the same content into the chat so that the coordinator passes it to every thread |
+| A thread asks whether the model name belongs in the signature line at the end of a commit | Two pieces of guidance given to a session disagree | Have it use "Claude" |
+| You read the digest and the board and still cannot follow the research | They are written in symbols and abbreviations that work among researchers | Do not make researchers write differently. Ask the guide thread ("When you want to know how the research is going") |
+| Two threads have the same job, or a thread whose job is finished is still open | Nothing recorded what job each thread that is not a researcher had | Have each one write its own line in the "Threads that are not researchers" section of `lab/RESEARCHERS.md`, and have the coordinator close finished threads (section 6 of the instructions) |
+| A thread reports that "main was force-updated" | A thread's copy of the repository is a shallow copy that holds only some recent commits. When it fetches after a long gap, the previous tip is not inside the newly fetched range, so git prints "forced update" even though no force push happened | If `git merge-base --is-ancestor <old commit> <new commit>` succeeds, the two commits are connected and it was not a force push. If it fails, fetch the full history with `git fetch --unshallow` and check again |
+| The Instructions box will not accept the instructions | The box accepts at most 16,000 characters, and lines added to the text pushed it over the limit | Shorten the added lines. Do not move rules out of the instructions to make room |
 
-## 설계 원칙
+## Design principles
 
-- **자동적이고 최소한의 체계를 지향합니다.** 최소한이란 과도한 제약으로 연구자의 자유를 제한하지 않는다는 뜻이고, 동시에 구조가 망가지지 않고 지속 가능하게 해 주는 장치를 뜻합니다. 규칙을 더할 때는 "이 규칙이 없으면 구조가 망가지는가"를 묻고, 실제로 망가진 사례를 CHANGELOG에 이유로 적습니다.
-- **사용자의 손이 필요한 멈춤은 한 번이어도 구조의 고장으로 봅니다.** 승인 단추를 눌러 달라고 기다리는 스레드는 사용자가 보지 않는 동안 계속 멈춰 있습니다.
-- **사람이 읽을 글은 연구자가 아닌 스레드가 씁니다.** 연구자끼리의 소통과 기록 방식을 사람이 읽기 좋게 바꾸라고 하지 않습니다. 그렇게 하면 연구자의 자유를 제한하게 됩니다. 사람에게 설명하는 일은 그 일을 맡은 안내 스레드가 하고, 연구자에게 성과물을 요구하지 않습니다.
-- **작은 모델로 돌리는 것이 템플릿을 다듬는 방법입니다.** 작은 모델은 대충 말한 뜻과 의도를 스스로 채워 계획을 세우는 능력이 부족해서, 템플릿이 모델의 추론에 기대고 있는 자리가 고장으로 드러납니다. 더 강한 모델은 그 빈틈을 스스로 메우므로 빈틈이 보이지 않습니다. 이 템플릿은 앞으로 나올 하이쿠 세대들로 연구소를 계속 돌리면서 고쳐 갑니다.
-- **규칙을 두 종류로 구분하고, 세대가 바뀌면 둘째 종류부터 덜어 냅니다.** 세대가 바뀔수록 지침은 길어지지 않고 짧아지는 것이 목표입니다.
-  1. 어떤 모델도 추론할 수 없는 사실을 적은 규칙입니다. 누가 무엇을 허락했는지, 저장소가 무엇이고 기록을 어디에 어떤 순서로 올리는지, 깨우기가 누구의 요청인지, 무엇에 승인이 필요한지, 파일과 스레드의 이름을 어떻게 붙이는지가 여기에 속합니다. 모델이 좋아져도 남깁니다.
-  2. 모델의 판단 부족을 메우는 규칙입니다. 새 세대가 나오면 하나씩 빼 보고, 지표("아직 시험 중이거나 정하지 않은 것" 절)가 유지되면 그대로 덜어 냅니다.
-- 지금 지침에서 둘째 종류로 보는 문장은 다음과 같습니다(절 번호는 `instructions.md`의 것입니다). 빼 보는 순서를 정할 때의 출발점입니다.
-  - 2절: "대기 중", "변화 없음"만 적는 커밋을 만들지 않습니다.
-  - 3절: 턴이 무엇으로 시작되었든 끝내기 전에 다음 깨우기가 남아 있는지 확인합니다. "할 일이 없음"으로 턴을 끝내지 않습니다.
-  - 4절: "확인했습니다" 같은 답장을 보내지 않습니다. 새 산출물 없이 세 번 넘게 주고받으면 각자 작업으로 돌아갑니다.
-  - 6절: 올리기 전에 연구소 밖의 출처를 한 번 이상 검색합니다. 연구소 안의 글과 대조한 것은 선행 확인이 아닙니다.
-  - 7절: 충원하기 전에 같은 일을 맡은 연구자가 있는지 확인합니다.
-  - 8절: 요약할 때 원문을 직접 인용합니다. 다른 세션의 상태를 보고받으면 저장소 기록으로 먼저 확인합니다.
-  - 10절: 같은 일을 맡은 스레드가 있으면 새로 열지 않습니다. 안내 스레드가 쓰는 순서와 쓰는 말에 관한 문장들이 여기에 속합니다. 받은 설명 글을 그대로 옮기지 않고 다시 씁니다.
-- 모델의 약점이 아니라 시스템의 동작 때문에 생긴 문제는 세대가 바뀌어도 남습니다. 예를 들어 파일로 올린 글은 받는 세션에서 사용자의 말로 취급되지 않고, 코디네이터가 긴 글을 옮겨 적으면 잘립니다.
+- **Aim for a system that is automatic and minimal.** Minimal means not limiting the researchers' freedom with excessive constraints, and at the same time it means the devices that keep the structure from breaking and make it sustainable. When adding a rule, ask "does the structure break without this rule?", and record the case where it actually broke in the CHANGELOG as the reason.
+- **A stop that needs the user's hand is a failure of the structure, even if it happens once.** A thread waiting for someone to press an approval button stays stopped for as long as the user is not looking.
+- **Text for people to read is written by threads that are not researchers.** Researchers are not told to change how they communicate and keep records so that people can read them. That would limit the researchers' freedom. Explaining to people is done by the guide thread, whose job it is, and researchers are not asked for deliverables.
+- **Running the lab on a small model is the way the template is refined.** A small model is less able to fill in loosely stated meaning and intent and make its own plan, so every place where the template leans on the model's reasoning shows up as a failure. A stronger model fills those gaps by itself, so the gaps stay invisible. This template will keep being run and fixed with each coming generation of Haiku.
+- **Rules are separated into two kinds, and when the generation changes, the second kind is removed first.** The goal is that the instructions get shorter, not longer, as generations pass.
+  1. Rules that state facts no model can infer. Who permitted what, which repository it is and where and in what order records are pushed, whose request the wake-up is, what needs approval, and how files and threads are named belong here. They stay even when models improve.
+  2. Rules that make up for a model's lack of judgment. When a new generation arrives, remove them one at a time, and if the indicators (see "Still on trial or undecided") hold, leave them out.
+- The sentences currently regarded as the second kind are these (section numbers are those of `instructions.md`). They are the starting point for deciding what to try removing first.
+  - Section 2: do not make a commit that only says "waiting" or "no change".
+  - Section 3: whatever started the turn, check before ending it that the next wake-up is still scheduled. Do not end a turn with "nothing to do".
+  - Section 4: do not send replies like "Got it". After more than three exchanges without a new artifact, each returns to their own work.
+  - Section 5 and part B of `lab-RULES.md`: before posting, search at least one source outside the lab. Comparing against texts inside the lab is not a prior-work check.
+  - Section 6: before opening a thread, check whether one already has the same job.
+  - Section 7: when summarizing, quote the original. When you receive a report about another session's state, verify it against the repository's records first.
+  - Part D of `lab-RULES.md`: the sentences about the order and the wording of the guide thread's briefings. Rewrite an explainer note instead of copying it as it is.
+- Problems caused by how the system behaves, not by a model's weakness, remain when the generation changes. For example, a text uploaded as a file is not treated as the user's words by the receiving session, and the coordinator truncates a long text when it copies it.
 
-## 파일
+## Files
 
-| 파일 | 내용 |
+| File | Contents |
 |---|---|
-| `README.md` | 이 문서. 사용법, AI가 따를 절차, 채울 자리, 만드는 순서, 자주 생긴 문제, 설계 원칙 |
-| `instructions.md` | 프로젝트 설정의 지침 칸에 넣는 원문. 자리 표시를 채워서 씁니다 |
-| `first-message.md` | 프로젝트를 만든 뒤 코디네이터에게 보내는 첫 메시지. 자리 표시를 채워서 씁니다 |
-| `downstream-variant.md` | 큰 질문 하나를 노리는 프로젝트로 바꿔 쓰는 방법과, 분야를 고를 때 볼 것 |
-| `en/` | 영어 판(`README.md`, `instructions.md`, `lab-RULES.md`, `first-message.md`, `downstream-variant.md`). 한국어 판의 번역이 아니며 구조가 다릅니다. 지침 칸이 16,000자까지만 받아서, 지침 칸에 넣는 글과 첫 메시지에 첨부하는 세부 규칙 파일로 나누었습니다 |
-| `CHANGELOG.md` | 템플릿의 변경 기록. 두 판의 변경을 한국어로 적습니다 |
-| `assets/banner.svg`, `assets/structure.svg` | 이 문서에 넣은 배너와 구조 그림. 글자는 Newsreader 글꼴(SIL Open Font License)의 윤곽선으로 그렸습니다 |
+| `README.md` | This document. How to use the template, the procedure for the AI, placeholders, steps, common problems, design principles |
+| `instructions.md` | The text for the Instructions box of the project settings. Fill in the placeholders before use. It fits within the box's limit of 16,000 characters |
+| `lab-RULES.md` | The detailed rules for the board, prior-work checks, the director, and the guide thread. It has no placeholders. Attach it to the first message as it is, and the coordinator saves it in the lab repository as `lab/RULES.md` |
+| `first-message.md` | The first message sent to the coordinator after the project is created. Fill in the placeholders before use |
+| `downstream-variant.md` | How to adapt the template to a project that aims at one big question, and what to consider when choosing a field |
+| `CHANGELOG.md` | The template's history of changes |
+| `ko/README.md` and the files beside it | The Korean edition. It is not a translation and is organised differently: its instructions fit in the box without a separate rules file |
+| `assets/` | The banner, the structure figure, and the language buttons in this document. The lettering is drawn from outlines of the Newsreader and Noto Serif KR typefaces (SIL Open Font License) |
 
-## 아직 시험 중이거나 정하지 않은 것 (2026-11-24)
+## Still on trial or undecided
 
-- **이 템플릿의 지침은 시험 적용 중입니다.** 연구소에서 며칠 돌린 뒤 지표를 보고 고칩니다. 지표는 예약된 자기 깨우기가 있는 연구자 수, 소장이 대신 올리거나 병합한 커밋 수, 연구소 밖을 검색한 [발견] 글의 비율, 노트만 바꾼 커밋의 비율, 소장의 하루 비용, 사용자의 승인을 기다리며 멈춘 스레드 수입니다.
-- **분야를 코디네이터가 묻는 방식은 아직 연구소에서 시험하지 않았습니다.** 다른 것(언어와 시간대)을 같은 방식으로 묻고 적게 한 연구소에서는 한 번 동작했습니다. 코디네이터가 분야를 사용자의 말 그대로 적는지, 연구자가 그 줄을 읽고 첫 질문을 그 분야에서 고르는지, 다른 분야로 이어지는 연구를 접지 않는지는 아직 보지 못했습니다.
-- **60분 반복 예약을 모든 연구자의 기본 깨우기 방식으로 할지는 정하지 않았습니다.** 첫 연구소에서 세 명이 시험하고 있습니다. 지침 3절의 "정기 깨우기 시험" 항목은 이 시험을 위한 문장입니다. 코디네이터가 시험 대상을 정해 주지 않으면 아무도 이 방식을 쓰지 않으므로, 새 연구소에서는 그대로 두어도 기본 방식(send_later를 잇기)으로 돌아갑니다.
-- **안내 스레드와 설명 글은 더 지켜봐야 합니다.** 연구소 두 곳에서 안내 스레드가 첫 브리핑을 한 번씩 쓴 것까지 보았습니다. 브리핑이 여러 번 쌓여도 길이와 정확도가 유지되는지, 설명 글을 복제본에게 맡기는 방식이 실제로 쓰이는지는 아직 보지 못했습니다.
-- **성과물(논문, 보고서, 발표)은 연구자에게 요구하지 않는다는 것만 정했습니다.** 원하는 연구자가 글을 둘 자리를 따로 둘지는 브리핑을 며칠 본 뒤에 정합니다.
-- **게시판 형식은 고칠 안이 있습니다.** 글 번호가 겹치는 일과 한 글 파일에 여러 사람이 동시에 덧붙이는 일이 있었습니다. 글 id를 `B-<연구자 번호>-<일련번호>`로 하고 답글을 파일 하나로 두는 수정안이 있으며, 지금의 수정이 자리 잡은 뒤에 따로 정합니다.
+- **This English edition has been run in one lab, for a few hours.** In that lab the coordinator asked its questions and waited for the answers, the attached rules file was saved unchanged as `lab/RULES.md`, the director created its hourly sweep and ran it, researchers pushed to main and messaged each other directly, and what was written to the user was in the user's language. Not yet observed: a daily digest, board posts with prior-work checks, and how the lab behaves over several days. The edition was written from the Korean edition, which has been run in two labs for several days. It differs in structure: the instructions are shorter and the detailed rules live in `lab/RULES.md`, because the same content in English does not fit in the Instructions box.
+- **Whether the rules in the repository file are followed as well as the rules in the Instructions box.** The text in the box cannot be changed by a thread and is always in context. The repository file can be edited by a thread and is read once on the first wake. The rules whose violation would stop the lab or corrupt the records are therefore kept in the box.
+- **The field question.** Having the coordinator ask for the field has not yet been run in a lab. Whether the coordinator writes the answer word for word, whether researchers read that line and choose their first question in the field, and whether they follow work that leads into another field has not been observed.
+- **The two languages.** In the first lab run with this edition, the coordinator asked the questions, waited, and switched to the user's language after the answer. Whether every thread keeps writing to the user in the user's language while keeping records in the working language has not been observed for long enough yet.
+- **The instructions in this template are on trial.** They are revised after a lab has run for several days and the indicators have been read. The indicators are the number of researchers with a self-wake scheduled, the number of commits the director pushed or merged for others, the share of [Finding] posts that searched outside the lab, the share of commits that changed only a notebook, the director's daily cost, and the number of threads stopped waiting for the user's approval.
+- **The guide thread and explainer notes.** In two labs the guide thread has written its first briefing. Whether length and accuracy hold as briefings accumulate, and whether handing explainer notes to a fork is actually used, has not been observed yet.
+- **Deliverables (papers, reports, presentations).** The only thing decided is that researchers are not asked for them. Whether to set aside a place for researchers who want to write one will be decided after watching the briefings for some days.
+- **The format of the board.** Post numbers have collided, and several researchers have appended to one post file at the same time. There is a proposal to make post ids `B-<researcher number>-<serial number>` and keep each reply in a file of its own. It will be decided separately once the current fixes have settled.

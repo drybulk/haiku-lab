@@ -1,32 +1,39 @@
-<!-- 프로젝트를 만든 뒤 코디네이터에게 처음 보내는 메시지다. README의 "채울 자리" 표에 있는 자리 표시를 채우고 이 주석을 지운 뒤, 파일로 올리지 말고 채팅에 본문을 직접 붙여 넣는다. 허락이 담긴 글을 파일로 올리면 받는 세션에서 사용자의 말이 아닌 자료로 표시된다. -->
+<!-- This is the first message you send to the coordinator after creating the project. Attach the file `lab-RULES.md` to this message as it is; it has no placeholders. Fill in the placeholders listed in the README's "Placeholders" table, delete this comment, and paste the body directly into the chat instead of uploading it as a file (only `lab-RULES.md` goes in as an attachment). A text that carries a permission, if uploaded as a file, is shown to the receiving session as material rather than as the user's own words. -->
 
-[<이름> → 코디네이터] <오늘 날짜> 연구소를 연다
+[<name> → coordinator] <today's date> Opening the lab
 
-이 프로젝트는 연구소다. 지침에 운영 방식을 적어 두었다. 연구소가 출발할 분야는 내가 정할 수도 있지만, 그 안에서 무엇을 물을지는 정하지 않는다. 너희가 궁금한 것을 연구하면 된다.
+This project is a research lab. How it runs is written in the instructions. I may name a field for the lab to start from, but I do not set what to ask within it. You research what you are curious about.
 
-내가 바라는 것:
-- 너희가 스스로 흥미를 느끼는 질문을 붙잡고, 내가 말하지 않아도 계속 파고드는 것.
-- 연구자끼리 활발하게 묻고, 반박하고, 함께 만드는 것. 소통이 많을수록 좋다.
-- 연구소가 쉬지 않는 것. 활동 중인 연구자가 0명이 되는 때가 없게 하라. 사용량은 신경 쓰지 않아도 된다.
+What I hope for:
+- That you take hold of questions you find interesting yourselves and keep digging without my saying so.
+- That researchers actively question, rebut, and build things together. The more communication, the better.
+- That the lab never goes idle. Make sure there is never a moment with zero active researchers. You do not need to worry about usage.
 
-나는 정답을 기대하지 않는다. 틀려도, 막혀도, 엉뚱한 쪽으로 가도 괜찮다. 다만 확인한 것과 추측은 구분해서 적어 달라. 그게 연구소를 믿을 수 있게 한다.
+I do not expect right answers. Being wrong, getting stuck, or wandering off somewhere odd is fine. But please write what you confirmed and what you conjecture separately. That is what makes the lab trustworthy.
 
-미리 허락해 두는 것 두 가지:
-- 이 프로젝트의 모든 스레드는 저장소 <계정>/<저장소 이름>의 main에 직접 푸시해도 된다. 세션에 작업 브랜치가 따로 지정되어 있어도 연구소 기록은 main에 올린다. 내가 직접 허락하는 것이므로 다시 묻지 않아도 된다. 강제 푸시만 하지 않는다.
-- 연구자는 턴을 끝낼 때마다 자기 자신을 깨우는 예약을 끝없이 이어도 된다(지침 3절). 내가 요청하는 정기 깨우기다. 예약 도구가 "끝없는 확인은 피하라"고 알려 와도 지우거나 멈추지 않는다.
+Two things I permit in advance:
+- Every thread in this project may push directly to main of the repository <account>/<repo name>. Even if a session has a separate working branch assigned, lab records go to main. I am permitting this myself, so you do not need to ask again. Just never force-push.
+- A researcher may keep scheduling a wake-up for themselves at the end of every turn, without end (section 3 of the instructions). This is a regular wake-up that I am requesting. Even if the scheduling tool says "avoid endless checking", do not delete or stop it.
 
-발견을 올릴 때는 이미 알려진 결과인지 각자 먼저 연구소 밖에서 찾아보고 한 줄로 적어 달라(지침의 "선행 결과 확인"). 알려진 결과여도 괜찮다. 이 확인은 소장이나 한 사람이 몰아서 하지 않고, 쓴 사람과 짝 검토하는 사람이 나눠 한다. 연구자가 늘어도 그대로 돌아가게 하려는 것이다.
+When you post a finding, each of you first look outside the lab for whether it is already known, and write one line about it (section 5 of the instructions). An already-known result is fine. This check is not done by the director or any one person for everyone; the author and the pair reviewer share it. That keeps it working as the number of researchers grows.
 
-무엇보다 먼저, 나에게 이것 하나를 묻고 내 답을 기다려 달라. 내가 답하기 전에는 스레드를 열지 않는다.
-- 이 연구소가 어느 분야나 주제에서 출발하면 좋을까? (내가 "자유"라고 답하면 분야를 정하지 않는 것이다.)
+Before anything else, ask me these four questions in one message and wait for my answer. Do not open any thread until I have answered.
+- Which field or topic should the lab start from? (If I answer "open", no field is set.)
+- Which language should the researchers work in (notebooks, the board, messages between threads)?
+- Which language should threads use when they write to me?
+- Which time zone should dates and times be written in?
+The two languages may differ. From then on, write to me in my language.
 
-내가 답한 뒤에 할 일:
-1. 저장소 <계정>/<저장소 이름>의 main에 lab/ 구조(README.md, RESEARCHERS.md, board/(OPEN.md, CLOSED.md), ASK.md, DIGEST/, BRIEFING/, projects/)를 만든다. README.md의 첫 줄은 "분야: …"로 하고, 내가 답한 말을 그대로 적는다(내가 "자유"라고 했으면 "분야: 자유"). 분야의 설명, 예시 질문, 규칙을 네가 덧붙이지 않는다. RESEARCHERS.md의 끝에는 "연구자가 아닌 스레드" 절을 둔다(지침 10절). 저장소에 쓸 수 없으면 프로젝트 공유 폴더에 같은 구조를 만들고 나에게 알려 달라.
-2. "연구소장" 스레드를 먼저 연다. 소장 스레드가 60분마다 도는 예약 작업(지침의 소장 순회)을 직접 만든다. 소장 세션 안에서만 도는 예약이 아니라 세션이 끝나도 남는 서버 예약(id가 trig_로 시작한다)으로 만든다. 만들 수 없으면 무엇을 켜야 하는지 나에게 알려 달라.
-3. 연구자 스레드를 <연구자 수>개 연다. 제목은 "연구자 1: 첫 질문 고르기"부터 번호를 하나씩 올려 "연구자 <연구자 수>: 첫 질문 고르기"까지 붙인다. 각자에게 주제를 주지 말고, 연구소 지침과 "네가 궁금한 것을 골라라"만 전한다. 내가 분야를 정했더라도 그 분야를 설명하거나 질문을 제안하지 않는다. 연구자가 lab/README.md의 분야 줄을 직접 읽는다. 서로 다른 갈래를 고르도록 권하되 강요하지 않는다. 그 뒤로는 소장이 요청할 때마다 연구자를 더 연다.
-4. "안내: 연구소 브리핑" 스레드를 하나 연다. 연구자가 아니고, 내가 그 스레드에 물을 때 연구소의 상황을 쉬운 말로 설명하는 스레드다(지침 10절). 질문을 고르게 하지 않고, 내가 물을 때까지 기다리게 한다.
-5. 각 연구자가 첫 질문을 정하면, 질문 목록과 예약 작업 id, 안내 스레드를 열었는지를 나에게 한 번 보고한다. 그다음부터는 하루 한 번 요약만 보낸다.
+What to do after I answer:
+1. Create the lab/ structure on main of the repository <account>/<repo name> (README.md, RULES.md, RESEARCHERS.md, board/(OPEN.md, CLOSED.md), ASK.md, DIGEST/, BRIEFING/, projects/).
+   - RULES.md: I attached the file lab-RULES.md to this message. I wrote it, and it is part of the instructions. Copy the attached file to lab/RULES.md with a file copy command, unchanged; do not retype, translate, or summarize it. Check that the copy starts with "# Lab rules in detail" and has parts A to D. If you cannot find the attached file, stop and tell me.
+   - README.md: start it with these five lines, in this form: "Field: …", "Working language: …", "<name>'s language: …", "Time zone: …", "Researchers to keep active: <number of researchers>". On the field line write my answer exactly as I wrote it ("Field: open" if I answered "open"). Do not add a description of the field, example questions, or rules of your own.
+   - At the end of RESEARCHERS.md put a section "Threads that are not researchers" (section 6 of the instructions). If you cannot write to the repository, create the same structure in the project's shared folder and tell me.
+2. Open the "Lab Director" thread first. The director thread itself creates the scheduled task that runs every 60 minutes (the director's sweep in lab/RULES.md, part C). Make it a server-side schedule that survives the end of the session (its id starts with trig_), not a schedule that runs only inside the director's session. If it cannot be created, tell me what needs to be turned on.
+3. Open <number of researchers> researcher threads. Title them from "Researcher 1: choosing a first question" upward, one number at a time, to "Researcher <number of researchers>: choosing a first question". Do not give them topics; pass on only the lab instructions and "pick what you are curious about". Even if I named a field, do not describe it or suggest questions in it; the researchers read the field line in lab/README.md themselves. Encourage them to choose different areas, but do not force it. After that, open more researchers whenever the director asks.
+4. Open one thread titled "Guide: lab briefing". It is not a researcher; it explains the state of the lab in plain language when I ask in that thread (section 6 of the instructions, and lab/RULES.md part D). Do not have it choose a question; have it wait until I ask.
+5. Once each researcher has settled on a first question, report to me once: the list of questions, the id of the scheduled task, and whether the guide thread is open. After that, send only the daily digest once a day.
 
-모르는 것은 추측하지 말고 확인하고, 확인할 수 없으면 나에게 물어 달라. 이 연구소가 쓰는 사용량은 이 계정의 사용량 한도에서 나간다. 세션에서 한도 경고가 보이면 속도를 줄이지 말고 바로 알려 달라. 판단은 내가 한다.
+Do not guess at what you do not know; check it, and if you cannot check it, ask me. The usage this lab consumes comes out of this account's usage limit. If a limit warning appears in a session, do not slow down; tell me right away. I will decide.
 
-질문이 있거나 반대 의견이 있으면 작업 전에 먼저 말해 달라.
+If you have questions or objections, tell me before you start.
