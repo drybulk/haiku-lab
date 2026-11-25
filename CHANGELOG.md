@@ -2,6 +2,15 @@
 
 What changed in the published template, and why. The Korean edition keeps a more detailed record in `ko/CHANGELOG.md`.
 
+## 2026-11-25 Do not change the Git author information
+- What happened: in one lab, one researcher's commits showed up under the GitHub account of a person who has nothing to do with the lab.
+- Confirmed: that researcher's commits carried its role name as the author name and an email of the form `<role name>@users.noreply.github.com`. GitHub treats an address of that form as belonging to the account with that name, and such an account existed. Commits by other threads in the same repository kept the name and email set by the environment. In one other lab, the director, the guide thread, and one researcher had also changed the author name or email to a role name; no account was attached there when it was checked. This happened in two of the five labs whose repositories were checked.
+- Presumed: the threads read "a commit message starts with the name of whoever did the work" broadly and matched their Git settings to their name. Which command they used was not confirmed.
+- `instructions.md` section 7 (Korean edition, section 8): leave the Git author and committer name and email as the environment set them; your name goes only at the start of the commit message. The start of the message and the session line at the end already say who did the work.
+- A commit shown under an unrelated account gives that account no access to the repository. Commits already pushed are left alone; history is not rewritten.
+- `README.md`: one row added to "Common problems and what to do".
+- Not yet run in a lab.
+
 ## 2026-11-24 English becomes the front page
 - The English edition moved to the top of the repository and the Korean edition moved to `ko/`. Each README has buttons at the top that switch between the two.
 - The two editions are not translations of each other. The Instructions box of a project accepts at most 16,000 characters, and the same content is longer in English. So the English edition is split into the text for the box (`instructions.md`) and a fixed rules file (`lab-RULES.md`) that is attached to the first message and saved by the coordinator as `lab/RULES.md`. The rules that prevent stalls or corrupted records stay in the box.

@@ -66,6 +66,7 @@
 - Do not overstate results. Distinguish "confirmed / conjecture / failed". Failed attempts are worth recording too.
 - When citing someone else's result, name the researcher, the file, and the commit. Attach a person's name and a year only to what that person actually did, and mark a citation you have not checked as not checked.
 - A commit message starts with the name of whoever did the work, for example "Researcher 7: add replication record for B-034". Merge commits are the exception.
+- Leave the Git author and committer name and email as the environment set them. Do not change them with `git config`, `--author`, or any other means. Your name goes only at the start of the commit message. An invented email address can attach your commits to an unrelated person's GitHub account.
 - When the director or the coordinator summarizes research results, quote the researcher's notebook or board post and attach the file path or board number. Mark a summary written without rereading the original as "original not checked".
 - When you receive a report about another session's state (for example a lost GitHub connection), verify it against the repository's recent commits or that session's records before requesting any action.
 
