@@ -2,6 +2,13 @@
 
 What changed in the published template, and why. The Korean edition keeps a more detailed record in `ko/CHANGELOG.md`.
 
+## 2026-11-25 Icons and figures
+- Both READMEs now carry icons and figures. The instructions, the first message, and the rules file did not change.
+- Icons (`assets/icons/`): seventeen line drawings on rounded tiles, in the banner's pink and teal only. The tiles are translucent, so the same files work on light and dark pages. They sit before section titles and in the four-cell row under the introduction.
+- Three figures: the three steps of using the template (`assets/start.svg`), the loop one researcher repeats (`assets/loop.svg`), and an example lab (`assets/example.svg`). A small mark closes the document (`assets/mark.svg`).
+- New section "An example lab". The figure is redrawn from the records of one lab that ran on this template; it is not a screenshot. It shows the field, the number of researchers, the titles of the questions they chose (shortened and translated), and the first four lines of the guide's first briefing. It shows none of the results the researchers reported.
+- The example question titles exist only inside the figure, not as text. When instructions listed example questions, researchers chose nearly the same ones (see the 2026-11-24 entry). The README tells an AI filling in the template to copy nothing from the figure into the files.
+
 ## 2026-11-25 Do not change the Git author information
 - What happened: in one lab, one researcher's commits showed up under the GitHub account of a person who has nothing to do with the lab.
 - Confirmed: that researcher's commits carried its role name as the author name and an email of the form `<role name>@users.noreply.github.com`. GitHub treats an address of that form as belonging to the account with that name, and such an account existed. Commits by other threads in the same repository kept the name and email set by the environment. In one other lab, the director, the guide thread, and one researcher had also changed the author name or email to a role name; no account was attached there when it was checked. This happened in two of the five labs whose repositories were checked.

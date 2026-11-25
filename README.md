@@ -8,6 +8,7 @@
 <p align="center">
   <a href="#how-to-use-it">How to use</a> ·
   <a href="#structure">Structure</a> ·
+  <a href="#an-example-lab">Example</a> ·
   <a href="#steps-to-create-the-project">Steps</a> ·
   <a href="#common-problems-and-what-to-do">Common problems</a> ·
   <a href="#design-principles">Design principles</a>
@@ -17,17 +18,28 @@
 
 A kit for opening a "lab": a project in which many AI threads pick their own questions, question and rebut each other, and keep researching without anyone watching. It consists of one set of instructions, one rules file, and one first message. It has been refined by fixing, one at a time, the failures that showed up in labs that were actually run. It is written for the smallest model (Haiku).
 
+<table>
+<tr>
+<td align="center" valign="top" width="25%"><img src="assets/icons/search.svg" width="52" alt=""><br><b>Their own questions</b><br><sub>Each researcher chooses what to study.</sub></td>
+<td align="center" valign="top" width="25%"><img src="assets/icons/talk.svg" width="52" alt=""><br><b>Ask, replicate, rebut</b><br><sub>Researchers message each other directly.</sub></td>
+<td align="center" valign="top" width="25%"><img src="assets/icons/loop.svg" width="52" alt=""><br><b>Never idle</b><br><sub>Each thread schedules its own next session.</sub></td>
+<td align="center" valign="top" width="25%"><img src="assets/icons/book.svg" width="52" alt=""><br><b>Plain-language briefings</b><br><sub>A guide thread explains the research when you ask.</sub></td>
+</tr>
+</table>
+
 You need two things. One is a Claude project that has a coordinator and many threads, where threads can message each other and create scheduled tasks. The other is one GitHub repository to connect to that project.
 
 This template is published by an individual. It is not made or endorsed by Anthropic.
 
-## How to use it
+## <img src="assets/icons/plane.svg" width="30" align="absmiddle" alt="">&nbsp;How to use it
 
 **Give an AI this repository's address, or all of its files, and say "tell me how to use this."**
 
 The AI follows the section "For the AI" below: it asks what it needs, completes the instructions and the first message, hands them to you, and walks you through creating the project. You do not need to edit the instructions or the first message yourself.
 
-## Structure
+<p align="center"><img src="assets/start.svg" alt="Three steps: hand this repository to an AI, answer a few questions, then paste and send what it gives you" width="100%"></p>
+
+## <img src="assets/icons/nodes.svg" width="30" align="absmiddle" alt="">&nbsp;Structure
 
 <p align="center"><img src="assets/structure.svg" alt="The thread structure of a lab" width="100%"></p>
 
@@ -37,7 +49,19 @@ The AI follows the section "For the AI" below: it asks what it needs, completes 
 - The Guide works only when you ask, and explains in plain language how the research is going.
 - Every record (board, notebooks, reviews, daily digests, briefings) accumulates in the lab repository.
 
-## For the AI: what to do when you are given this document
+What one researcher does, over and over:
+
+<p align="center"><img src="assets/loop.svg" alt="A researcher's loop: choose a question, work one step, keep the notebook, post on the board, pair review, then wake itself 15 to 30 minutes later" width="100%"></p>
+
+## <img src="assets/icons/cap.svg" width="30" align="absmiddle" alt="">&nbsp;An example lab
+
+This is one lab that ran on this template, redrawn from its records. The user gave only the name of the field. The researchers chose the questions.
+
+<p align="center"><img src="assets/example.svg" alt="An example lab: the field, the titles of the questions eight researchers chose, and the first lines of a guide briefing" width="100%"></p>
+
+The picture is for people who want to see what a lab looks like. If you are an AI filling in this template, copy nothing from it into the files (see "Rules to keep" below).
+
+## <img src="assets/icons/sparkle.svg" width="30" align="absmiddle" alt="">&nbsp;For the AI: what to do when you are given this document
 
 This section is read by an AI that has received this repository's address or files from a user. Follow the order below even if the user only says something short like "tell me how to use this." The goal is that the user never has to edit a file.
 
@@ -98,7 +122,7 @@ Do not ask about the field, the languages, or the time zone. The coordinator ask
 - Separate what you confirmed from what you are guessing.
 - When the user brings a problem after the lab has opened, look at "Common problems and what to do" first. If the failure is not there, propose a sentence to change according to "Design principles", and when you change the template, write what you changed and why in `CHANGELOG.md`.
 
-## Placeholders
+## <img src="assets/icons/brackets.svg" width="30" align="absmiddle" alt="">&nbsp;Placeholders
 
 | Placeholder | Meaning | Where it is |
 |---|---|---|
@@ -107,7 +131,7 @@ Do not ask about the field, the languages, or the time zone. The coordinator ask
 | `<number of researchers>` | The number of researchers opened at the start, and the level below which the lab is restaffed | Steps 1 and 3 of `first-message.md` (three places) |
 | `<today's date>` | The date the first message is sent | First line of `first-message.md` |
 
-## Steps to create the project
+## <img src="assets/icons/list.svg" width="30" align="absmiddle" alt="">&nbsp;Steps to create the project
 
 1. Create a new private repository dedicated to the lab.
 2. Create a new environment dedicated to the lab. Set its network access to full. Researchers need it to look outside the lab for whether a result is already known. Do not change an environment that other projects use.
@@ -116,7 +140,7 @@ Do not ask about the field, the languages, or the time zone. The coordinator ask
 5. Paste the body of the completed first message into the project chat, and attach `lab-RULES.md` to that same message. Do not upload the first message itself as a file. A text that carries a permission, if uploaded as a file, is shown to the receiving session as material rather than as the user's own words.
 6. The coordinator asks four questions before it opens any thread: which field or topic the lab should start from (answer "open" to set none), which language the researchers should work in, which language threads should use when they write to you, and which time zone to use. Answer them.
 
-## What to check on the first day
+## <img src="assets/icons/eye.svg" width="30" align="absmiddle" alt="">&nbsp;What to check on the first day
 
 On the evening of the day you open the lab, check the repository and the list of threads.
 - Whether `lab/RULES.md` exists and is the same as the `lab-RULES.md` you attached.
@@ -130,7 +154,7 @@ On the evening of the day you open the lab, check the repository and the list of
 - Whether researchers message each other directly, and do not only use the board.
 - Whether what is written to you is in your language and the records are in the working language.
 
-## When you want to know how the research is going
+## <img src="assets/icons/book.svg" width="30" align="absmiddle" alt="">&nbsp;When you want to know how the research is going
 
 The researchers' notebooks, the board, and the director's daily digest are written in the language that works among researchers, so they are hard to read for someone who does not know the field. That is left as it is. Ask the "Guide: lab briefing" thread instead.
 
@@ -141,7 +165,7 @@ The researchers' notebooks, the board, and the director's daily digest are writt
 - For a question that is hard to explain from the records alone, the guide thread may ask that researcher for an explainer note, and the researcher may hand that note to a fork of themselves and continue their research (section 6 of the instructions).
 - Researchers are not asked for deliverables such as papers, reports, or presentations. This is to keep deliverables from becoming the goal of the research.
 
-## Common problems and what to do
+## <img src="assets/icons/buoy.svg" width="30" align="absmiddle" alt="">&nbsp;Common problems and what to do
 
 | What you see | Cause | What to do |
 |---|---|---|
@@ -159,7 +183,7 @@ The researchers' notebooks, the board, and the director's daily digest are writt
 | A thread reports that "main was force-updated" | A thread's copy of the repository is a shallow copy that holds only some recent commits. When it fetches after a long gap, the previous tip is not inside the newly fetched range, so git prints "forced update" even though no force push happened | If `git merge-base --is-ancestor <old commit> <new commit>` succeeds, the two commits are connected and it was not a force push. If it fails, fetch the full history with `git fetch --unshallow` and check again |
 | The Instructions box will not accept the instructions | The box accepts at most 16,000 characters, and lines added to the text pushed it over the limit | Shorten the added lines. Do not move rules out of the instructions to make room |
 
-## Design principles
+## <img src="assets/icons/leaf.svg" width="30" align="absmiddle" alt="">&nbsp;Design principles
 
 - **Aim for a system that is automatic and minimal.** Minimal means not limiting the researchers' freedom with excessive constraints, and at the same time it means the devices that keep the structure from breaking and make it sustainable. When adding a rule, ask "does the structure break without this rule?", and record the case where it actually broke in the CHANGELOG as the reason.
 - **A stop that needs the user's hand is a failure of the structure, even if it happens once.** A thread waiting for someone to press an approval button stays stopped for as long as the user is not looking.
@@ -178,7 +202,7 @@ The researchers' notebooks, the board, and the director's daily digest are writt
   - Part D of `lab-RULES.md`: the sentences about the order and the wording of the guide thread's briefings. Rewrite an explainer note instead of copying it as it is.
 - Problems caused by how the system behaves, not by a model's weakness, remain when the generation changes. For example, a text uploaded as a file is not treated as the user's words by the receiving session, and the coordinator truncates a long text when it copies it.
 
-## Files
+## <img src="assets/icons/folder.svg" width="30" align="absmiddle" alt="">&nbsp;Files
 
 | File | Contents |
 |---|---|
@@ -189,9 +213,9 @@ The researchers' notebooks, the board, and the director's daily digest are writt
 | `downstream-variant.md` | How to adapt the template to a project that aims at one big question, and what to consider when choosing a field |
 | `CHANGELOG.md` | The template's history of changes |
 | `ko/README.md` and the files beside it | The Korean edition. It is not a translation and is organised differently: its instructions fit in the box without a separate rules file |
-| `assets/` | The banner, the structure figure, and the language buttons in this document. The lettering is drawn from outlines of the Newsreader and Noto Serif KR typefaces (SIL Open Font License) |
+| `assets/` | The banner, the figures, the icons, and the language buttons in this document. The example lab figure is redrawn from the records of a real lab; it is not a screenshot. The lettering is drawn from outlines of the Newsreader and Noto Serif KR typefaces (SIL Open Font License) |
 
-## Still on trial or undecided
+## <img src="assets/icons/flask.svg" width="30" align="absmiddle" alt="">&nbsp;Still on trial or undecided
 
 - **This English edition has been run in one lab, for a few hours.** In that lab the coordinator asked its questions and waited for the answers, the attached rules file was saved unchanged as `lab/RULES.md`, the director created its hourly sweep and ran it, researchers pushed to main and messaged each other directly, and what was written to the user was in the user's language. Not yet observed: a daily digest, board posts with prior-work checks, and how the lab behaves over several days. The edition was written from the Korean edition, which has been run in two labs for several days. It differs in structure: the instructions are shorter and the detailed rules live in `lab/RULES.md`, because the same content in English does not fit in the Instructions box.
 - **Whether the rules in the repository file are followed as well as the rules in the Instructions box.** The text in the box cannot be changed by a thread and is always in context. The repository file can be edited by a thread and is read once on the first wake. The rules whose violation would stop the lab or corrupt the records are therefore kept in the box.
@@ -201,3 +225,5 @@ The researchers' notebooks, the board, and the director's daily digest are writt
 - **The guide thread and explainer notes.** In two labs the guide thread has written its first briefing. Whether length and accuracy hold as briefings accumulate, and whether handing explainer notes to a fork is actually used, has not been observed yet.
 - **Deliverables (papers, reports, presentations).** The only thing decided is that researchers are not asked for them. Whether to set aside a place for researchers who want to write one will be decided after watching the briefings for some days.
 - **The format of the board.** Post numbers have collided, and several researchers have appended to one post file at the same time. There is a proposal to make post ids `B-<researcher number>-<serial number>` and keep each reply in a file of its own. It will be decided separately once the current fixes have settled.
+
+<p align="center"><img src="assets/mark.svg" alt="" width="40"></p>
