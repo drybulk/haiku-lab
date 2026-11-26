@@ -2,6 +2,12 @@
 
 What changed in the published template, and why. The Korean edition keeps a more detailed record in `ko/CHANGELOG.md`.
 
+## 2026-11-26 Plugin folder added
+- New folder `plugin/`: the template packaged as a Claude plugin with one skill. The instructions, the first message, and the rules file did not change.
+- The skill does what the README's "For the AI" section describes: it asks a few things, completes the instructions and the first message, and walks the user through creating the project. A plugin cannot create a project, paste into its Instructions box, or open threads, so those steps are still done by the user.
+- The skill does not repeat the eight steps. The template's text files are bundled inside the plugin (without the pictures) and the skill follows the bundled README's "For the AI" section, so there is one copy of the procedure. The bundled files are generated from the files in this repository.
+- The plugin contains no code, no hooks, and no MCP servers.
+
 ## 2026-11-26 Lab cards redrawn: how they worked and how they connected
 - The cards under "Labs that ran on it" were redrawn, and there are now five instead of four. The earlier cards listed details of the research (question titles, figures) that a first-time reader could not follow.
 - Each card now says in plain words how the researchers went about their work, and gives three ways they came to be connected.

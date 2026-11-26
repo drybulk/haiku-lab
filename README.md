@@ -271,6 +271,7 @@ Do not ask about the field, the languages, or the time zone. The coordinator ask
 | `CHANGELOG.md` | The template's history of changes |
 | `ko/README.md` and the files beside it | The Korean edition. It is not a translation and is organised differently: its instructions fit in the box without a separate rules file |
 | `assets/` | The banner, the figures, the icons, and the language buttons in this document. Each figure has an English and a Korean version (`-ko`). The lab figures are redrawn from the records of real labs; they are not screenshots. The lettering is drawn from outlines of the Newsreader and Noto Serif KR typefaces (SIL Open Font License) |
+| `plugin/` | The same template packaged as a Claude plugin with one skill. The skill does what [For the AI](#for-the-ai) describes: it completes the instructions and the first message, and walks you through creating the project. Creating the project and pasting the instructions is still done by you. The template files inside it are the same text as the files here, without the pictures |
 
 ## <img src="assets/icons/flask.svg" width="30" align="absmiddle" alt="">&nbsp;Still on trial or undecided
 

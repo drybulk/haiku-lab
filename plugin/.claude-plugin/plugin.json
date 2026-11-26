@@ -1,0 +1,10 @@
+{
+  "name": "haiku-lab",
+  "displayName": "Haiku Lab",
+  "version": "0.1.0",
+  "description": "Open a self-running research lab in a Claude project: a director thread, a guide thread, and several researcher threads that choose their own questions, check each other's work, and keep their records in a dedicated GitHub repository. The skill completes the lab's instructions and first message for you and walks you through creating the project.",
+  "author": { "name": "drybulk" },
+  "license": "MIT",
+  "icon": "./assets/icon.png",
+  "keywords": ["research", "multi-agent", "project-template", "threads", "lab"]
+}
