@@ -2,6 +2,14 @@
 
 What changed in the published template, and why. The Korean edition keeps a more detailed record in `ko/CHANGELOG.md`.
 
+## 2026-11-26 Lab cards redrawn: how they worked and how they connected
+- The cards under "Labs that ran on it" were redrawn, and there are now five instead of four. The earlier cards listed details of the research (question titles, figures) that a first-time reader could not follow.
+- Each card now says in plain words how the researchers went about their work, and gives three ways they came to be connected.
+- Each card has a graph. Circles and squares are researchers (a circle was there when the lab opened, a square was added while it ran); a line means one researcher's records name the other. The lines are counted from the commits in the lab's repository, and thickness follows the count. Direct messages between threads are not kept in the repository and are not counted.
+- Every card starts with the same five facts in the same order: initial researchers, researchers added later, reasoning effort, working language, user's language. These labels carry no color; pink and teal are used only for researchers in the graph and the numbers that point to them.
+- A second fantasy web-novel lab was added. It was opened separately with the same request as the first and differs in reasoning effort. Each ran once and other conditions differ too, so the difference between the two cards cannot be read as an effect of reasoning effort. The README says so.
+- The lists of question titles were removed from the cards.
+
 ## 2026-11-25 README rearranged for people
 - Both READMEs were rearranged. The instructions, the first message, and the rules file did not change.
 - What a person looks at first now comes first: how it works, two languages, labs that ran on it, get started. Long reference parts (first-day checks, common problems, the two kinds of rules, the eight steps for the AI and the placeholders, what is still on trial) keep their headings but have their bodies folded. The folded text is still in the file, so an AI reads all of it as before.

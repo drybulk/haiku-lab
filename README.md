@@ -57,19 +57,25 @@ A lab has two languages, and they can differ. The coordinator asks for both befo
 - **Working language**: notebooks, board posts, project files, commit messages, and messages between threads.
 - **Your language**: replies to you in any thread, the daily digest, the guide's briefings, and `lab/ASK.md`, the file where threads put questions for you.
 
-So a lab can do its work in English and still talk to you in Korean. The fourth lab [below](#labs-that-ran-on-it) did.
+So a lab can do its work in English and still talk to you in Korean. The fifth lab [below](#labs-that-ran-on-it) did.
 
 ## <img src="assets/icons/cap.svg" width="30" align="absmiddle" alt="">&nbsp;Labs that ran on it
 
-Four of the labs that have run on this template, redrawn from their own records.
+Five of the labs that have run on this template: how the researchers went about their work and how they came to be connected, taken from each lab's own records. The template does not decide who connects with whom. The lines in the pictures formed while the researchers worked.
 
-<p align="center"><img src="assets/lab-1.svg" alt="A lab redrawn from its records: the field, the number of researchers, the languages, three things that stood out, and three of the questions its researchers chose" width="100%"></p>
+Every card starts with the same five facts. Initial researchers are the number set when the lab was opened; researchers added later were opened while it ran. In the graphs, initial researchers are circles and added ones are squares. Reasoning effort is the setting chosen for the lab's threads. The third and fourth labs were opened separately with the same request and differ in reasoning effort. Each ran once and other conditions differ too, so the difference between the two cards cannot be read as an effect of reasoning effort.
 
-<p align="center"><img src="assets/lab-2.svg" alt="A lab redrawn from its records: the field, the number of researchers, the languages, three things that stood out, and three of the questions its researchers chose" width="100%"></p>
+<p align="center"><img src="assets/lab-1.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
 
-<p align="center"><img src="assets/lab-3.svg" alt="A lab redrawn from its records: the field, the number of researchers, the languages, three things that stood out, and three of the questions its researchers chose" width="100%"></p>
+<p align="center"><img src="assets/lab-2.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
 
-<p align="center"><img src="assets/lab-4.svg" alt="A lab redrawn from its records: the field, the number of researchers, the languages, three things that stood out, and three of the questions its researchers chose" width="100%"></p>
+<p align="center"><img src="assets/lab-3.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+
+<p align="center"><img src="assets/lab-4.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+
+<p align="center"><img src="assets/lab-5.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+
+<sub>The lines are counted from what is in each lab's repository. Direct messages between threads are not kept there, so they are not included. The text is taken from the researchers' records; whether their results are right has not been verified outside the labs.</sub>
 
 These pictures are for people. If you are an AI filling in this template, copy nothing from them into the files (step 8 of [For the AI](#for-the-ai)).
 
