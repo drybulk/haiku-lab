@@ -63,19 +63,26 @@ So a lab can do its work in English and still talk to you in Korean. The fifth l
 
 Five of the labs that have run on this template: how the researchers went about their work and how they came to be connected, taken from each lab's own records. The template does not decide who connects with whom. The lines in the pictures formed while the researchers worked.
 
-Every card starts with the same five facts. Initial researchers are the number set when the lab was opened; researchers added later were opened while it ran. In the graphs, initial researchers are circles and added ones are squares. Reasoning effort is the setting chosen for the lab's threads. The third and fourth labs were opened separately with the same request and differ in reasoning effort. Each ran once and other conditions differ too, so the difference between the two cards cannot be read as an effect of reasoning effort.
+Every card starts with the same six facts.
 
-<p align="center"><img src="assets/lab-1.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+- **Initial researchers and researchers added later**: initial researchers are the number set when the lab was opened; the others were opened while it ran. Both count only researchers who left commits in the repository; how many threads were opened in all cannot be told from the repository alone. In the graphs, initial researchers are circles and added ones are squares.
+- **Reasoning effort**: the setting chosen for the lab's threads. The values are taken from the records of whoever opened the lab; they were not read back from the settings screen.
+- **Working language and user's language**: the two languages described [above](#two-languages).
+- **Recorded over**: from the first commit in the repository to the last commit on the day the records were counted for these pictures (26 November 2026). If a lab was paused for a while, that time is included.
 
-<p align="center"><img src="assets/lab-2.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+The labs were recorded over different lengths of time, so the number of added researchers and the thickness of the lines cannot be compared directly from card to card. The third and fourth labs were opened separately with the same request and differ in reasoning effort. Each ran once and other conditions differ too, so the difference between the two cards cannot be read as an effect of reasoning effort either.
 
-<p align="center"><img src="assets/lab-3.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+<p align="center"><img src="assets/lab-1.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how long it was recorded, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
 
-<p align="center"><img src="assets/lab-4.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+<p align="center"><img src="assets/lab-2.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how long it was recorded, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
 
-<p align="center"><img src="assets/lab-5.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+<p align="center"><img src="assets/lab-3.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how long it was recorded, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
 
-<sub>The lines are counted from what is in each lab's repository. Direct messages between threads are not kept there, so they are not included. The text is taken from the researchers' records; whether their results are right has not been verified outside the labs.</sub>
+<p align="center"><img src="assets/lab-4.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how long it was recorded, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+
+<p align="center"><img src="assets/lab-5.svg" alt="A lab that ran on the template: the field, how many researchers it started with and how many were added, the reasoning effort, the languages, how long it was recorded, how the researchers went about it, and a graph of the links that formed between them" width="100%"></p>
+
+<sub>Each graph shows references between researchers, counted from what is in the lab's repository. When the subject of a researcher's commit, or a line that commit adds to the board or to a research folder, names another researcher, that counts once for the pair. The direction of the reference is dropped. So the thickness of a line follows the number of such commits, not the number of things two researchers did together. Direct messages between threads are not kept in the repository, so they are not included. The text is taken from the researchers' records; whether their results are right has not been verified outside the labs.</sub>
 
 These pictures are for people. If you are an AI filling in this template, copy nothing from them into the files (step 8 of [For the AI](#for-the-ai)).
 
