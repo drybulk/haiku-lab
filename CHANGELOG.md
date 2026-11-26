@@ -2,6 +2,17 @@
 
 What changed in the published template, and why. The Korean edition keeps a more detailed record in `ko/CHANGELOG.md`.
 
+## 2026-11-25 README rearranged for people
+- Both READMEs were rearranged. The instructions, the first message, and the rules file did not change.
+- What a person looks at first now comes first: how it works, two languages, labs that ran on it, get started. Long reference parts (first-day checks, common problems, the two kinds of rules, the eight steps for the AI and the placeholders, what is still on trial) keep their headings but have their bodies folded. The folded text is still in the file, so an AI reads all of it as before.
+- Every place that refers to another section now links to it. References to a section of the instructions link to that section of `instructions.md`.
+- The lettering in the figures is larger. Body text in a figure no longer falls below 14 pixels on screen (the one-line source note under each lab card is 13).
+- Every figure has a Korean version (files ending in `-ko`), used by the Korean README. The Korean README also uses a banner with a Korean tagline (`assets/banner-ko.svg`).
+- New section and figure "Two languages": the working language researchers write in for each other, and the language threads use when they write to you, are set separately.
+- "An example lab" became "Labs that ran on it": four labs, one card each, with an overview (field, number of researchers, languages), three things that stood out, and three of the questions the researchers chose. The cards are redrawn from each lab's records. The researchers' reported results have not been verified outside the labs.
+- The row of feature cells under the introduction grew from four to six.
+- The entry about the field question in "Still on trial or undecided" was updated with what was seen in labs opened that way.
+
 ## 2026-11-25 Icons and figures
 - Both READMEs now carry icons and figures. The instructions, the first message, and the rules file did not change.
 - Icons (`assets/icons/`): seventeen line drawings on rounded tiles, in the banner's pink and teal only. The tiles are translucent, so the same files work on light and dark pages. They sit before section titles and in the four-cell row under the introduction.
