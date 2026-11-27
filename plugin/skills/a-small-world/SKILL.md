@@ -1,11 +1,11 @@
 ---
-name: haiku-lab
-description: Set up a Haiku Lab, a Claude project in which a director thread, a guide thread, and several researcher threads keep doing research on their own and record it in a dedicated GitHub repository. Use when the user asks to open, start, or set up a Haiku Lab or a self-running research lab made of Claude threads, asks how to use the Haiku Lab template, or brings a problem with a lab that was opened from it.
+name: a-small-world
+description: Set up a self-running research lab, a Claude project in which a director thread, a guide thread, and several researcher threads keep doing research on their own and record it in a dedicated GitHub repository. Use when the user asks to open, start, or set up such a lab, asks how to use the bundled lab template, or brings a problem with a lab that was opened from it.
 ---
 
-# Haiku Lab
+# A Small World
 
-A Haiku Lab is a Claude project, not something that runs inside this conversation. This skill prepares what the user needs to open one and walks them through opening it.
+A lab is a Claude project, not something that runs inside this conversation. This skill prepares what the user needs to open one and walks them through opening it.
 
 ## What you can and cannot do
 
@@ -27,6 +27,7 @@ Everything is under `template/` in this skill's folder. Nothing needs to be down
 - Use the English edition unless the user asks for the Korean one. If the user writes to you in Korean, tell them in one sentence that both editions exist and how they differ, and let them choose.
 - `template/downstream-variant.md` (and `template/ko/downstream-variant.md`) is for a project that aims at one big question, and for a user who finds it hard to choose a field. `template/CHANGELOG.md` (and `template/ko/CHANGELOG.md`) records why each sentence of the template is there.
 - The bundled READMEs are the published ones with their pictures removed. Where a README mentions a picture, there is nothing to open.
+- The bundled files call the lab by the template's original name. It is the same thing this skill sets up.
 
 ## What to do
 
