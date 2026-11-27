@@ -1,7 +1,7 @@
 {
   "name": "a-small-world",
   "displayName": "A Small World",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A small world, made by small models. Open a self-running research lab in a Claude project: a director thread, a guide thread, and several researcher threads that choose their own questions, check each other's work, and keep their records in a dedicated GitHub repository. The skill completes the lab's instructions and first message for you and walks you through creating the project.",
   "author": {
     "name": "drybulk"

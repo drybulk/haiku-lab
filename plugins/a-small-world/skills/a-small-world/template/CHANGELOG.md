@@ -2,6 +2,10 @@
 
 What changed in the published template, and why. The Korean edition keeps a more detailed record in `ko/CHANGELOG.md`.
 
+## 2026-11-27 Plugin folder moved to plugins/a-small-world/
+- The plugin folder moved from `plugin/` to `plugins/a-small-world/`. The Claude directory ties each submission to one folder of the repository and treats the plugin's `name` as an identity that does not change. So 0.2.0, with its new name, could not go live under the old folder's submission ("the name isn't the one you submitted"). The new name is submitted afresh from the new folder.
+- From now on the folder is named after the plugin. The version is now 0.2.1. What the skill does did not change; the template text inside the plugin only gained this entry and the new folder path.
+
 ## 2026-11-27 Plugin renamed to A Small World
 - The plugin was renamed from `haiku-lab` (Haiku Lab) to `a-small-world` (A Small World), version 0.2.0. The Claude directory refused 0.1.0 under its policy because the listing name used an Anthropic model name. The new name comes from the banner's line "A small world, made by small models", which is now the first sentence of the plugin's description.
 - The skill is now named `a-small-world` too. The model name was removed from the skill's description and the plugin's README. What the skill does and the template inside it did not change.
